@@ -1,7 +1,5 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:media_kit/media_kit.dart';
-import 'package:media_kit_video/media_kit_video.dart';
+import 'package:video_player/video_player.dart';
 
 class VideoPlayerItem extends StatefulWidget {
   final String url;
@@ -13,63 +11,48 @@ class VideoPlayerItem extends StatefulWidget {
 }
 
 class _VideoPlayerItemState extends State<VideoPlayerItem> {
-  late final Player player;
-  late final VideoController controller;
-  final List<StreamSubscription> _subscriptions = [];
+  late VideoPlayerController _controller;
+  bool _isInitialized = false;
 
   @override
   void initState() {
     super.initState();
-    player = Player();
-    controller = VideoController(player);
+    _initializeController();
+  }
 
-    // Tinh chỉnh nhân MPV để vượt qua lỗi đồ họa trên Emulator
+  Future<void> _initializeController() async {
+    _controller = VideoPlayerController.networkUrl(Uri.parse(widget.url));
     try {
-      if (player.platform is dynamic) {
-        (player as dynamic).setProperty('hwdec', 'no'); // Tắt giải mã phần cứng
-        (player as dynamic).setProperty('vo', 'gpu');
-        (player as dynamic).setProperty('gpu-context', 'android');
+      await _controller.initialize();
+      if (mounted) {
+        setState(() {
+          _isInitialized = true;
+        });
+        if (widget.isActive) {
+          _controller.play();
+        }
+        _controller.setLooping(true);
       }
     } catch (e) {
-      debugPrint('Lỗi cấu hình MPV: $e');
+      debugPrint('VideoPlayer Error: $e');
     }
-    
-    // Debug logging for player state
-    _subscriptions.add(player.stream.error.listen((error) {
-      debugPrint('MediaKit Error: $error');
-    }));
-
-    _subscriptions.add(player.stream.completed.listen((completed) {
-      if (completed) {
-        debugPrint('Playback completed');
-      }
-    }));
-
-    player.open(
-      Media(widget.url),
-      play: widget.isActive,
-    );
-    player.setPlaylistMode(PlaylistMode.loop);
   }
 
   @override
   void didUpdateWidget(VideoPlayerItem oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (widget.isActive && !oldWidget.isActive) {
-      debugPrint('Activating video: ${widget.url}');
-      player.play();
-    } else if (!widget.isActive && oldWidget.isActive) {
-      debugPrint('Pausing video: ${widget.url}');
-      player.pause();
+    if (_isInitialized) {
+      if (widget.isActive && !oldWidget.isActive) {
+        _controller.play();
+      } else if (!widget.isActive && oldWidget.isActive) {
+        _controller.pause();
+      }
     }
   }
 
   @override
   void dispose() {
-    for (final s in _subscriptions) {
-      s.cancel();
-    }
-    player.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -79,26 +62,21 @@ class _VideoPlayerItemState extends State<VideoPlayerItem> {
       children: [
         // Video Player
         Positioned.fill(
-          child: Video(
-            controller: controller,
-            fill: Colors.black,
-            alignment: Alignment.center,
-            fit: BoxFit.cover,
-            controls: NoVideoControls,
-          ),
-        ),
-        
-        // Buffering Indicator
-        StreamBuilder<bool>(
-          stream: player.stream.buffering,
-          builder: (context, snapshot) {
-            if (snapshot.data == true) {
-              return const Center(
-                child: CircularProgressIndicator(color: Colors.white),
-              );
-            }
-            return const SizedBox.shrink();
-          },
+          child: _isInitialized
+              ? Center(
+                  child: FittedBox(
+                    fit: BoxFit.cover,
+                    clipBehavior: Clip.hardEdge,
+                    child: SizedBox(
+                      width: _controller.value.size.width,
+                      height: _controller.value.size.height,
+                      child: VideoPlayer(_controller),
+                    ),
+                  ),
+                )
+              : const Center(
+                  child: CircularProgressIndicator(color: Colors.white),
+                ),
         ),
 
         // Gradient overlay
@@ -188,34 +166,24 @@ class _VideoPlayerItemState extends State<VideoPlayerItem> {
         Positioned.fill(
           child: GestureDetector(
             onTap: () {
-              if (player.state.playing) {
-                player.pause();
+              if (_controller.value.isPlaying) {
+                _controller.pause();
               } else {
-                player.play();
+                _controller.play();
               }
+              setState(() {});
             },
           ),
         ),
 
-        // Error log display (Optional - for debugging on emulator)
-        StreamBuilder(
-          stream: player.stream.error,
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Text(
-                    'Error: ${snapshot.data}',
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(color: Colors.red),
-                  ),
-                ),
-              );
-            }
-            return const SizedBox.shrink();
-          },
-        ),
+        // Initialization Error View
+        if (!_isInitialized && _controller.value.hasError)
+          const Center(
+            child: Text(
+              'Failed to load video',
+              style: TextStyle(color: Colors.red),
+            ),
+          ),
       ],
     );
   }

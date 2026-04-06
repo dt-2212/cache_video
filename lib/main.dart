@@ -5,7 +5,6 @@ import 'video_scrolling_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  MediaKit.ensureInitialized();
   runApp(
     const ProviderScope(
       child: MyApp(),
