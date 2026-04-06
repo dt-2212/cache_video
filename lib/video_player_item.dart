@@ -20,12 +20,19 @@ class _VideoPlayerItemState extends State<VideoPlayerItem> {
   @override
   void initState() {
     super.initState();
-    player = Player(
-      configuration: const PlayerConfiguration(
-          // Set a generic browser user agent to avoid some CDN restrictions.
-          ),
-    );
+    player = Player();
     controller = VideoController(player);
+
+    // Tinh chỉnh nhân MPV để vượt qua lỗi đồ họa trên Emulator
+    try {
+      if (player.platform is dynamic) {
+        (player as dynamic).setProperty('hwdec', 'no'); // Tắt giải mã phần cứng
+        (player as dynamic).setProperty('vo', 'gpu');
+        (player as dynamic).setProperty('gpu-context', 'android');
+      }
+    } catch (e) {
+      debugPrint('Lỗi cấu hình MPV: $e');
+    }
     
     // Debug logging for player state
     _subscriptions.add(player.stream.error.listen((error) {
