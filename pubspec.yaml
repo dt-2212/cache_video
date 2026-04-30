@@ -31,25 +31,21 @@ dependencies:
   flutter:
     sdk: flutter
 
-  media_kit: ^1.2.6 # Primary package.
-  media_kit_video: ^2.0.1 # For video rendering.
-  media_kit_libs_video: ^1.0.7 # Native video dependencies.
-  flutter_riverpod: ^2.5.1
-  riverpod_annotation: ^2.3.5
+  get: ^4.6.6
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
-  video_player: ^2.11.1
+  # Custom video_player fork with HLS cache + preCache support
+  # (hlsCacheConfig, BufferingConfig, VideoPlayerController.preCache).
+  # Local clone of the fork; its pubspec uses path: deps for the sibling
+  # platform packages, so they resolve from the same local tree.
+  video_player:
+    path: ../flutter-packages/packages/video_player/video_player
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  
-  riverpod_generator: ^2.4.0
-  build_runner: ^2.4.9
-  custom_lint: ^0.6.4
-  riverpod_lint: ^2.3.10
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
