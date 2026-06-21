@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import '../../../core/controllers/app_data_controller.dart';
 import '../../../core/models/video.dart';
+import '../../../core/services/iptv_service.dart';
 
 /// A titled horizontal rail on the Home discovery page.
 class HomeRail {
@@ -9,18 +9,40 @@ class HomeRail {
   const HomeRail(this.title, this.videos);
 }
 
-/// Builds the Home discovery content (featured banner + themed rails).
+/// Builds the Home discovery content from live iptv-org channels.
+///
+/// Each iptv-org category becomes one rail; the featured banner reuses the
+/// first channels of the first rail.
 class HomeController extends GetxController {
-  final AppDataController _data = Get.find();
+  final RxBool loading = true.obs;
+  final RxString error = ''.obs;
+  final RxList<HomeRail> rails = <HomeRail>[].obs;
 
-  List<Video> get featured => _data.videos;
+  /// Channels shown in the featured banner (top of the first rail).
+  List<Video> get featured =>
+      rails.isEmpty ? const [] : rails.first.videos.take(5).toList();
 
-  List<HomeRail> get rails {
-    final all = _data.videos;
-    return [
-      HomeRail('Trending Now', all),
-      HomeRail('New Releases', all.reversed.toList()),
-      HomeRail('Recommended For You', [...all.skip(1), ...all.take(1)]),
-    ];
+  @override
+  void onInit() {
+    super.onInit();
+    load();
+  }
+
+  Future<void> load() async {
+    loading.value = true;
+    error.value = '';
+    try {
+      final groups = await IptvService.fetchGroups();
+      rails.assignAll([
+        for (final g in groups) HomeRail(g.title, g.channels),
+      ]);
+      if (rails.isEmpty) {
+        error.value = 'No live channels available right now.';
+      }
+    } catch (e) {
+      error.value = 'Failed to load live channels.';
+    } finally {
+      loading.value = false;
+    }
   }
 }

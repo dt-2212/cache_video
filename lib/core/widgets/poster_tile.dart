@@ -44,11 +44,25 @@ class PosterTile extends StatelessWidget {
                   ),
                 ),
                 child: Stack(
+                  fit: StackFit.expand,
                   children: [
-                    const Center(
-                      child: Icon(Icons.play_circle_fill,
-                          color: Colors.white70, size: 36),
-                    ),
+                    if (video.logoUrl != null)
+                      Padding(
+                        padding: const EdgeInsets.all(16),
+                        child: Image.network(
+                          video.logoUrl!,
+                          fit: BoxFit.contain,
+                          errorBuilder: (_, _, _) => const Center(
+                            child: Icon(Icons.live_tv,
+                                color: Colors.white70, size: 36),
+                          ),
+                        ),
+                      )
+                    else
+                      const Center(
+                        child: Icon(Icons.play_circle_fill,
+                            color: Colors.white70, size: 36),
+                      ),
                     Positioned(
                       top: 8,
                       left: 8,
@@ -69,21 +83,38 @@ class PosterTile extends StatelessWidget {
                     Positioned(
                       bottom: 6,
                       left: 6,
-                      child: Row(
-                        children: [
-                          const Icon(Icons.play_arrow,
-                              color: Colors.white, size: 13),
-                          const SizedBox(width: 2),
-                          Text(
-                            video.viewsLabel,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 11,
-                              fontWeight: FontWeight.bold,
+                      child: video.isLive
+                          ? Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 6, vertical: 2),
+                              decoration: BoxDecoration(
+                                color: Colors.red,
+                                borderRadius: BorderRadius.circular(4),
+                              ),
+                              child: const Text(
+                                'LIVE',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            )
+                          : Row(
+                              children: [
+                                const Icon(Icons.play_arrow,
+                                    color: Colors.white, size: 13),
+                                const SizedBox(width: 2),
+                                Text(
+                                  video.viewsLabel,
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                        ],
-                      ),
                     ),
                   ],
                 ),

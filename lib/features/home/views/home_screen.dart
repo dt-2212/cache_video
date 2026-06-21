@@ -5,7 +5,7 @@ import '../../../core/widgets/feed_viewer_screen.dart';
 import '../../../core/widgets/poster_tile.dart';
 import '../controllers/home_controller.dart';
 
-/// Home = drama-style discovery page: featured banner + themed rails.
+/// Home = live-TV discovery page (iptv-org): featured banner + category rails.
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -15,25 +15,64 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.black,
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            backgroundColor: Colors.black,
-            floating: true,
-            title: const Text('ShortDrama',
-                style: TextStyle(fontWeight: FontWeight.bold)),
-            actions: [
-              IconButton(icon: const Icon(Icons.search), onPressed: () {}),
-              IconButton(
-                  icon: const Icon(Icons.notifications_none), onPressed: () {}),
-            ],
-          ),
-          SliverToBoxAdapter(child: _FeaturedCarousel(videos: controller.featured)),
-          for (final rail in controller.rails)
-            SliverToBoxAdapter(
-              child: _Rail(title: rail.title, videos: rail.videos),
+      body: Obx(() {
+        if (controller.loading.value) {
+          return const Center(
+            child: CircularProgressIndicator(color: Colors.white),
+          );
+        }
+        if (controller.error.isNotEmpty) {
+          return _ErrorState(
+            message: controller.error.value,
+            onRetry: controller.load,
+          );
+        }
+        return CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              backgroundColor: Colors.black,
+              floating: true,
+              title: const Text('Live TV',
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              actions: [
+                IconButton(icon: const Icon(Icons.search), onPressed: () {}),
+                IconButton(
+                    icon: const Icon(Icons.refresh),
+                    onPressed: controller.load),
+              ],
             ),
-          const SliverToBoxAdapter(child: SizedBox(height: 24)),
+            SliverToBoxAdapter(
+                child: _FeaturedCarousel(videos: controller.featured)),
+            for (final rail in controller.rails)
+              SliverToBoxAdapter(
+                child: _Rail(title: rail.title, videos: rail.videos),
+              ),
+            const SliverToBoxAdapter(child: SizedBox(height: 24)),
+          ],
+        );
+      }),
+    );
+  }
+}
+
+class _ErrorState extends StatelessWidget {
+  final String message;
+  final VoidCallback onRetry;
+  const _ErrorState({required this.message, required this.onRetry});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const Icon(Icons.live_tv, color: Colors.white38, size: 56),
+          const SizedBox(height: 12),
+          Text(message,
+              style: const TextStyle(color: Colors.white70),
+              textAlign: TextAlign.center),
+          const SizedBox(height: 16),
+          OutlinedButton(onPressed: onRetry, child: const Text('Retry')),
         ],
       ),
     );
@@ -60,6 +99,7 @@ class _FeaturedCarouselState extends State<_FeaturedCarousel> {
 
   @override
   Widget build(BuildContext context) {
+    if (widget.videos.isEmpty) return const SizedBox.shrink();
     return Column(
       children: [
         SizedBox(
@@ -85,11 +125,27 @@ class _FeaturedCarouselState extends State<_FeaturedCarousel> {
                         ),
                       ),
                       child: Stack(
+                        fit: StackFit.expand,
                         children: [
-                          const Center(
-                            child: Icon(Icons.play_circle_fill,
-                                color: Colors.white70, size: 54),
-                          ),
+                          if (video.logoUrl != null)
+                            Center(
+                              child: Image.network(
+                                video.logoUrl!,
+                                height: 80,
+                                fit: BoxFit.contain,
+                                errorBuilder: (_, _, _) => const Icon(
+                                    Icons.live_tv,
+                                    color: Colors.white70,
+                                    size: 54),
+                              ),
+                            )
+                          else
+                            const Center(
+                              child: Icon(Icons.live_tv,
+                                  color: Colors.white70, size: 54),
+                            ),
+                          const Positioned(
+                            top: 12, right: 12, child: _LiveBadge()),
                           Positioned(
                             left: 16,
                             bottom: 16,
@@ -97,17 +153,27 @@ class _FeaturedCarouselState extends State<_FeaturedCarousel> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  video.title,
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.black54,
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 6, vertical: 2),
+                                  child: Text(
+                                    video.title,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
                                 const SizedBox(height: 4),
                                 Text(
-                                  '${video.category} · ${video.viewsLabel} views',
+                                  video.category,
                                   style: const TextStyle(
                                       color: Colors.white70, fontSize: 13),
                                 ),
@@ -141,6 +207,26 @@ class _FeaturedCarouselState extends State<_FeaturedCarousel> {
           ),
         ),
       ],
+    );
+  }
+}
+
+class _LiveBadge extends StatelessWidget {
+  const _LiveBadge();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+      decoration: BoxDecoration(
+        color: Colors.red,
+        borderRadius: BorderRadius.circular(4),
+      ),
+      child: const Text('LIVE',
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 10,
+              fontWeight: FontWeight.bold)),
     );
   }
 }
