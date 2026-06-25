@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import '../../../core/routes/app_routes.dart';
 
@@ -12,6 +13,7 @@ class SplashController extends GetxController {
   }
 
   Future<void> _goToMain() async {
+    debugPrint('🚀 Splash hold ${_holdDuration.inSeconds}s then -> ${Routes.main}');
     await Future<void>.delayed(_holdDuration);
     // offAllNamed so the splash is removed from the navigation stack.
     await Get.offAllNamed<void>(Routes.main);

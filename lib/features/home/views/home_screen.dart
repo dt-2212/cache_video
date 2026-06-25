@@ -27,28 +27,36 @@ class HomeScreen extends StatelessWidget {
             onRetry: controller.load,
           );
         }
-        return CustomScrollView(
-          slivers: [
-            SliverAppBar(
-              backgroundColor: Colors.black,
-              floating: true,
-              title: const Text('Live TV',
-                  style: TextStyle(fontWeight: FontWeight.bold)),
-              actions: [
-                IconButton(icon: const Icon(Icons.search), onPressed: () {}),
-                IconButton(
-                    icon: const Icon(Icons.refresh),
-                    onPressed: controller.load),
-              ],
-            ),
-            SliverToBoxAdapter(
-                child: _FeaturedCarousel(videos: controller.featured)),
-            for (final rail in controller.rails)
-              SliverToBoxAdapter(
-                child: _Rail(title: rail.title, videos: rail.videos),
+        return RefreshIndicator(
+          onRefresh: () => controller.load(showLoader: false),
+          color: Colors.white,
+          backgroundColor: Colors.black87,
+          child: CustomScrollView(
+            // Always scrollable so the pull gesture works even when the rails
+            // don't fill the screen.
+            physics: const AlwaysScrollableScrollPhysics(),
+            slivers: [
+              SliverAppBar(
+                backgroundColor: Colors.black,
+                floating: true,
+                title: const Text(
+                  'Live TV',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                actions: [
+                  IconButton(icon: const Icon(Icons.search), onPressed: () {}),
+                ],
               ),
-            const SliverToBoxAdapter(child: SizedBox(height: 24)),
-          ],
+              SliverToBoxAdapter(
+                child: _FeaturedCarousel(videos: controller.featured),
+              ),
+              for (final rail in controller.rails)
+                SliverToBoxAdapter(
+                  child: _Rail(title: rail.title, videos: rail.videos),
+                ),
+              const SliverToBoxAdapter(child: SizedBox(height: 24)),
+            ],
+          ),
         );
       }),
     );
@@ -68,9 +76,11 @@ class _ErrorState extends StatelessWidget {
         children: [
           const Icon(Icons.live_tv, color: Colors.white38, size: 56),
           const SizedBox(height: 12),
-          Text(message,
-              style: const TextStyle(color: Colors.white70),
-              textAlign: TextAlign.center),
+          Text(
+            message,
+            style: const TextStyle(color: Colors.white70),
+            textAlign: TextAlign.center,
+          ),
           const SizedBox(height: 16),
           OutlinedButton(onPressed: onRetry, child: const Text('Retry')),
         ],
@@ -134,18 +144,25 @@ class _FeaturedCarouselState extends State<_FeaturedCarousel> {
                                 height: 80,
                                 fit: BoxFit.contain,
                                 errorBuilder: (_, _, _) => const Icon(
-                                    Icons.live_tv,
-                                    color: Colors.white70,
-                                    size: 54),
+                                  Icons.live_tv,
+                                  color: Colors.white70,
+                                  size: 54,
+                                ),
                               ),
                             )
                           else
                             const Center(
-                              child: Icon(Icons.live_tv,
-                                  color: Colors.white70, size: 54),
+                              child: Icon(
+                                Icons.live_tv,
+                                color: Colors.white70,
+                                size: 54,
+                              ),
                             ),
                           const Positioned(
-                            top: 12, right: 12, child: _LiveBadge()),
+                            top: 12,
+                            right: 12,
+                            child: _LiveBadge(),
+                          ),
                           Positioned(
                             left: 16,
                             bottom: 16,
@@ -159,7 +176,9 @@ class _FeaturedCarouselState extends State<_FeaturedCarousel> {
                                     borderRadius: BorderRadius.circular(4),
                                   ),
                                   padding: const EdgeInsets.symmetric(
-                                      horizontal: 6, vertical: 2),
+                                    horizontal: 6,
+                                    vertical: 2,
+                                  ),
                                   child: Text(
                                     video.title,
                                     maxLines: 1,
@@ -175,7 +194,9 @@ class _FeaturedCarouselState extends State<_FeaturedCarousel> {
                                 Text(
                                   video.category,
                                   style: const TextStyle(
-                                      color: Colors.white70, fontSize: 13),
+                                    color: Colors.white70,
+                                    fontSize: 13,
+                                  ),
                                 ),
                               ],
                             ),
@@ -222,11 +243,14 @@ class _LiveBadge extends StatelessWidget {
         color: Colors.red,
         borderRadius: BorderRadius.circular(4),
       ),
-      child: const Text('LIVE',
-          style: TextStyle(
-              color: Colors.white,
-              fontSize: 10,
-              fontWeight: FontWeight.bold)),
+      child: const Text(
+        'LIVE',
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 10,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
     );
   }
 }
@@ -259,10 +283,8 @@ class _Rail extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             itemCount: videos.length,
             separatorBuilder: (_, _) => const SizedBox(width: 12),
-            itemBuilder: (context, i) => PosterTile(
-              video: videos[i],
-              onTap: () => openFeed(videos, i),
-            ),
+            itemBuilder: (context, i) =>
+                PosterTile(video: videos[i], onTap: () => openFeed(videos, i)),
           ),
         ),
       ],

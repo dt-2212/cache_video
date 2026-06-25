@@ -26,16 +26,14 @@ class MainNavigation extends StatelessWidget {
 
     return Obx(() {
       final selected = controller.currentTab.value;
-      final isReelTab = selected == MainController.reelTab;
       return Scaffold(
         backgroundColor: Colors.black,
-        extendBody: isReelTab,
         body: IndexedStack(index: selected, children: _pages),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: selected,
           onTap: controller.changeTab,
           type: BottomNavigationBarType.fixed,
-          backgroundColor: isReelTab ? Colors.transparent : Colors.black,
+          backgroundColor: Colors.black,
           elevation: 0,
           selectedItemColor: Colors.white,
           unselectedItemColor: Colors.white54,
@@ -43,9 +41,13 @@ class MainNavigation extends StatelessWidget {
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.video_collection), label: 'Reel'),
+              icon: Icon(Icons.video_collection),
+              label: 'Reel',
+            ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.video_library), label: 'Library'),
+              icon: Icon(Icons.video_library),
+              label: 'Library',
+            ),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
           ],
         ),

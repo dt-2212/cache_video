@@ -36,6 +36,10 @@ dependencies:
   # HTTP client used to fetch the iptv-org M3U playlists for the Home tab.
   dio: ^5.7.0
 
+  # Detect the iOS Simulator (HLS disk cache hangs there) to fall back to
+  # direct streaming.
+  device_info_plus: ^11.2.0
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8

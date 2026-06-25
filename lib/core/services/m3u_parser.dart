@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 /// A single entry parsed from an M3U / M3U8 playlist (one `#EXTINF` + its URL).
 class M3uEntry {
   final String name;
@@ -15,7 +17,7 @@ class M3uEntry {
   });
 }
 
-/// Minimal extended-M3U parser, enough for the iptv-org playlists.
+/// Minimal extended-M3U parser, enough for the channel playlists.
 ///
 /// Reads each `#EXTINF:` line (pulling `tvg-logo`, `group-title`, `tvg-id`
 /// attributes and the trailing display name) and pairs it with the next
@@ -56,6 +58,7 @@ abstract class M3uParser {
         attrs = {};
       }
     }
+    debugPrint('📄 M3uParser: ${lines.length} lines -> ${entries.length} entries');
     return entries;
   }
 

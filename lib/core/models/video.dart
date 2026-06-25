@@ -17,7 +17,7 @@ class Video {
   /// Accent color used for placeholder thumbnails / gradients.
   final Color thumbColor;
 
-  /// Channel/poster logo (e.g. iptv-org `tvg-logo`). Null falls back to the
+  /// Channel/poster logo (the playlist's `tvg-logo`). Null falls back to the
   /// gradient placeholder built from [thumbColor].
   final String? logoUrl;
 

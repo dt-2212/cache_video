@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'core/routes/app_pages.dart';
+import 'core/services/precache_manager.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // Resolve simulator vs. device so the HLS disk cache is only used where it
+  // works (real devices).
+  await PreCacheManager.init();
   runApp(const MyApp());
 }
 

@@ -34,24 +34,52 @@ class _VideoFeedState extends State<VideoFeed> {
     super.initState();
     _currentIndex = widget.initialIndex;
     _controller = PageController(initialPage: widget.initialIndex);
-    _warmUpCache();
+    _preCacheAround(_currentIndex);
   }
 
-  /// Preload the first few upcoming reels so the feed starts instantly.
-  void _warmUpCache() {
+  /// Preload the current reel, plus neighboring reels (before and after) so scrolling in either direction is instant.
+  void _preCacheAround(int index) {
     final count = widget.videos.length;
     if (count == 0) return;
-    for (var i = 0; i < PreCacheManager.prefetchCount; i++) {
-      PreCacheManager.preCache(widget.videos[(_currentIndex + i) % count].url);
+
+    final indices = <int>{};
+    indices.add(index);
+
+    // Cache next 2 videos
+    for (var i = 1; i <= 2; i++) {
+      final target = index + i;
+      if (widget.loop) {
+        indices.add(target % count);
+      } else {
+        if (target >= 0 && target < count) {
+          indices.add(target);
+        }
+      }
+    }
+
+    // Cache previous 2 videos
+    for (var i = 1; i <= 2; i++) {
+      final target = index - i;
+      if (widget.loop) {
+        indices.add((target % count + count) % count);
+      } else {
+        if (target >= 0 && target < count) {
+          indices.add(target);
+        }
+      }
+    }
+
+    debugPrint('📺 VideoFeed preCacheAround index=$index indices=$indices');
+    for (final idx in indices) {
+      final v = widget.videos[idx];
+      PreCacheManager.preCache(v.url, live: v.isLive);
     }
   }
 
   void _onPageChanged(int index) {
+    debugPrint('📺 VideoFeed page -> $index');
     setState(() => _currentIndex = index);
-    final count = widget.videos.length;
-    if (count == 0) return;
-    // Preload the next reel as soon as the current one is shown.
-    PreCacheManager.preCache(widget.videos[(index + 1) % count].url);
+    _preCacheAround(index);
   }
 
   @override

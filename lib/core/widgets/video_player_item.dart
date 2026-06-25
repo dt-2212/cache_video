@@ -27,6 +27,7 @@ class _VideoPlayerItemState extends State<VideoPlayerItem>
   final AppDataController _data = Get.find();
   late VideoPlayerController _controller;
   bool _isInitialized = false;
+  bool _hasError = false;
   bool _appActive = true;
 
   @override
@@ -37,20 +38,47 @@ class _VideoPlayerItemState extends State<VideoPlayerItem>
   }
 
   Future<void> _initializeController() async {
+    final url = widget.video.url;
+    debugPrint('🎬 init START "${widget.video.title}" '
+        'live=${widget.video.isLive} url=$url');
     _controller = VideoPlayerController.networkUrl(
-      Uri.parse(widget.video.url),
-      videoPlayerOptions: PreCacheManager.optionsFor(widget.video.url),
+      Uri.parse(url),
+      videoPlayerOptions:
+          PreCacheManager.optionsFor(url, live: widget.video.isLive),
     );
+    // Surface every controller state change while initialize() is pending,
+    // so a hang vs. a buffering/error state is visible in the logs.
+    _controller.addListener(_logValue);
+    final sw = Stopwatch()..start();
     try {
-      await _controller.initialize();
+      // Bound the wait so a dead/blocked stream stops at an error instead of
+      // spinning forever.
+      await _controller.initialize().timeout(const Duration(seconds: 15));
+      debugPrint('🎬 init OK   "${widget.video.title}" '
+          'in ${sw.elapsedMilliseconds}ms size=${_controller.value.size} '
+          'duration=${_controller.value.duration}');
       if (mounted) {
         setState(() => _isInitialized = true);
         _controller.setLooping(true);
         _syncPlayback();
       }
     } catch (e) {
-      debugPrint('VideoPlayer Error: $e');
+      debugPrint('🎬 init FAIL "${widget.video.title}" '
+          'after ${sw.elapsedMilliseconds}ms err=$e');
+      if (mounted) setState(() => _hasError = true);
     }
+  }
+
+  /// Logs notable controller-state transitions (avoids per-frame spam).
+  String _lastValueLog = '';
+  void _logValue() {
+    final v = _controller.value;
+    final snapshot = 'initialized=${v.isInitialized} buffering=${v.isBuffering} '
+        'playing=${v.isPlaying} hasError=${v.hasError}';
+    if (snapshot == _lastValueLog) return;
+    _lastValueLog = snapshot;
+    debugPrint('🎬 state "${widget.video.title}" $snapshot'
+        '${v.hasError ? ' errorDesc=${v.errorDescription}' : ''}');
   }
 
   /// Play only when this page is active *and* the app is foregrounded.
@@ -58,9 +86,17 @@ class _VideoPlayerItemState extends State<VideoPlayerItem>
     if (!_isInitialized) return;
     final shouldPlay = widget.isActive && _appActive;
     if (shouldPlay && !_controller.value.isPlaying) {
+      debugPrint('🎬 play  "${widget.video.title}"');
       _controller.play();
-      _data.markWatched(widget.video.id);
+      // markWatched mutates a GetX observable. _syncPlayback can run mid-build
+      // (e.g. from didUpdateWidget when the active page changes), and writing an
+      // observable during build throws "setState() called during build". Defer
+      // it to after the current frame.
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _data.markWatched(widget.video.id);
+      });
     } else if (!shouldPlay && _controller.value.isPlaying) {
+      debugPrint('🎬 pause "${widget.video.title}"');
       _controller.pause();
     }
   }
@@ -81,6 +117,7 @@ class _VideoPlayerItemState extends State<VideoPlayerItem>
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
+    _controller.removeListener(_logValue);
     _controller.dispose();
     super.dispose();
   }
@@ -113,9 +150,22 @@ class _VideoPlayerItemState extends State<VideoPlayerItem>
                 )
               : Container(
                   color: video.thumbColor.withValues(alpha: 0.25),
-                  child: const Center(
-                    child: CircularProgressIndicator(color: Colors.white),
-                  ),
+                  alignment: Alignment.center,
+                  child: _hasError
+                      ? Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const Icon(Icons.error_outline,
+                                color: Colors.white70, size: 48),
+                            const SizedBox(height: 8),
+                            Text(
+                              'Stream unavailable\n${video.title}',
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(color: Colors.white70),
+                            ),
+                          ],
+                        )
+                      : const CircularProgressIndicator(color: Colors.white),
                 ),
         ),
 
@@ -226,14 +276,6 @@ class _VideoPlayerItemState extends State<VideoPlayerItem>
         if (_isInitialized && !_controller.value.isPlaying)
           const Center(
             child: Icon(Icons.play_arrow, color: Colors.white70, size: 72),
-          ),
-
-        if (!_isInitialized && _controller.value.hasError)
-          const Center(
-            child: Text(
-              'Failed to load video',
-              style: TextStyle(color: Colors.red),
-            ),
           ),
       ],
     );

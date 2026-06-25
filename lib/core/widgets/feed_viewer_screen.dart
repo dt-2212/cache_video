@@ -44,5 +44,7 @@ class FeedViewerScreen extends StatelessWidget {
 
 /// Opens the given list as a full-screen vertical feed starting at [index].
 void openFeed(List<Video> videos, int index) {
+  debugPrint('📺 openFeed count=${videos.length} index=$index '
+      'first="${videos.isEmpty ? '-' : videos[index].title}"');
   Get.toNamed<void>(Routes.feed, arguments: FeedArgs(videos, index));
 }
