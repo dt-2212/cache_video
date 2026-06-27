@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../models/video.dart';
 import '../services/precache_manager.dart';
 import 'video_player_item.dart';
@@ -7,11 +8,15 @@ import 'video_player_item.dart';
 ///
 /// Pass [isActive] = false when the owning tab is not visible so playback
 /// pauses. Set [loop] for an endless feed that cycles the list.
+/// Provide [controller] to control page jumps externally.
+/// [onEpisodesTap] overrides the EP button behavior per-item.
 class VideoFeed extends StatefulWidget {
   final List<Video> videos;
   final bool isActive;
   final int initialIndex;
   final bool loop;
+  final PageController? controller;
+  final void Function(Video)? onEpisodesTap;
 
   const VideoFeed({
     super.key,
@@ -19,6 +24,8 @@ class VideoFeed extends StatefulWidget {
     this.isActive = true,
     this.initialIndex = 0,
     this.loop = true,
+    this.controller,
+    this.onEpisodesTap,
   });
 
   @override
@@ -27,14 +34,15 @@ class VideoFeed extends StatefulWidget {
 
 class _VideoFeedState extends State<VideoFeed> {
   late final PageController _controller;
-  late int _currentIndex;
+  late final RxInt _currentIndex;
 
   @override
   void initState() {
     super.initState();
-    _currentIndex = widget.initialIndex;
-    _controller = PageController(initialPage: widget.initialIndex);
-    _preCacheAround(_currentIndex);
+    _currentIndex = widget.initialIndex.obs;
+    _controller =
+        widget.controller ?? PageController(initialPage: widget.initialIndex);
+    _preCacheAround(_currentIndex.value);
   }
 
   /// Preload the current reel, plus neighboring reels (before and after) so scrolling in either direction is instant.
@@ -80,13 +88,14 @@ class _VideoFeedState extends State<VideoFeed> {
 
   void _onPageChanged(int index) {
     debugPrint('📺 VideoFeed page -> $index');
-    setState(() => _currentIndex = index);
+    _currentIndex.value = index;
     _preCacheAround(index);
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    // Only dispose if we created the controller ourselves.
+    if (widget.controller == null) _controller.dispose();
     super.dispose();
   }
 
@@ -99,19 +108,25 @@ class _VideoFeedState extends State<VideoFeed> {
       );
     }
 
-    return PageView.builder(
-      controller: _controller,
-      scrollDirection: Axis.vertical,
-      itemCount: widget.loop ? null : count,
-      onPageChanged: _onPageChanged,
-      itemBuilder: (context, index) {
-        final video = widget.videos[index % count];
-        return VideoPlayerItem(
-          key: ValueKey('${video.id}_$index'),
-          video: video,
-          isActive: widget.isActive && index == _currentIndex,
-        );
-      },
-    );
+    return Obx(() {
+      // Read here so Obx tracks the subscription; pass as captured local
+      // into itemBuilder which is called lazily outside Obx's build scope.
+      final current = _currentIndex.value;
+      return PageView.builder(
+        controller: _controller,
+        scrollDirection: Axis.vertical,
+        itemCount: widget.loop ? null : count,
+        onPageChanged: _onPageChanged,
+        itemBuilder: (context, index) {
+          final video = widget.videos[index % count];
+          return VideoPlayerItem(
+            key: ValueKey('${video.id}_$index'),
+            video: video,
+            isActive: widget.isActive && index == current,
+            onEpisodesTap: widget.onEpisodesTap,
+          );
+        },
+      );
+    });
   }
 }

@@ -205,7 +205,6 @@ abstract class ChannelService {
 
   static Video _toVideo(M3uEntry e, String railTitle, int index) {
     return Video(
-      // Stream URL is unique + stable, so it doubles as the like/history key.
       id: e.url,
       url: e.url,
       title: e.name,
@@ -213,10 +212,6 @@ abstract class ChannelService {
       author: e.name,
       caption: e.name,
       music: 'Live broadcast',
-      likes: 0,
-      comments: 0,
-      shares: 0,
-      views: 0,
       thumbColor: _palette[index % _palette.length],
       logoUrl: e.logo,
       isLive: true,

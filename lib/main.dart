@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'core/constants/app_constants.dart';
 import 'core/routes/app_pages.dart';
 import 'core/services/auth_service.dart';
 import 'core/services/precache_manager.dart';
@@ -32,13 +33,13 @@ class MyApp extends StatelessWidget {
     final initialLocale = savedLang != null ? Locale(savedLang) : null;
 
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
+      designSize: AppConstants.designSize,
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'FlexStream',
+          title: AppConstants.appName,
           locale: initialLocale,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,

@@ -28,16 +28,12 @@ class SplashScreen extends StatelessWidget {
                 height: 96,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  gradient: const LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [AppColors.accent, AppColors.coral],
-                  ),
+                  gradient: AppColors.primaryGradient,
                   boxShadow: [
                     BoxShadow(
-                      color: AppColors.accent.withValues(alpha: 0.5),
-                      blurRadius: 24,
-                      spreadRadius: 2,
+                      color: AppColors.primary.withValues(alpha: 0.5),
+                      blurRadius: 32,
+                      spreadRadius: 4,
                     ),
                   ],
                 ),

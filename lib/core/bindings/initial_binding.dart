@@ -12,10 +12,10 @@ class InitialBinding extends Bindings {
   @override
   void dependencies() {
     Get.put(AppDataController(), permanent: true);
-    Get.put(MainController());
-    Get.lazyPut(() => HomeController());
-    Get.lazyPut(() => ReelController());
-    Get.lazyPut(() => LibraryController());
-    Get.lazyPut(() => ProfileController());
+    Get.put(MainController(), permanent: true);
+    Get.put(HomeController(), permanent: true);
+    Get.put(ReelController(), permanent: true);
+    Get.put(LibraryController(), permanent: true);
+    Get.put(ProfileController(), permanent: true);
   }
 }

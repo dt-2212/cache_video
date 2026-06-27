@@ -6,17 +6,28 @@ import '../../../core/routes/app_routes.dart';
 import '../../../core/services/auth_service.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../l10n/app_localizations.dart';
+import '../../main/controllers/main_controller.dart';
+import '../../library/controllers/library_controller.dart';
 import '../controllers/profile_controller.dart';
 import '../widgets/activity_overview.dart';
 import '../widgets/language_bottom_sheet.dart';
 import '../widgets/profile_header.dart';
 import '../widgets/profile_tile.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
   @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     final controller = Get.find<ProfileController>();
     final data = Get.find<AppDataController>();
     final auth = AuthService.to;
@@ -41,6 +52,14 @@ class ProfileScreen extends StatelessWidget {
                 favoriteCount: controller.favoriteCount,
                 watchedCount: controller.watchedCount,
                 l10n: l10n,
+                onTapFavorites: () {
+                  Get.find<MainController>().changeTab(2);
+                  Get.find<LibraryController>().selectedTab.value = 0;
+                },
+                onTapWatched: () {
+                  Get.find<MainController>().changeTab(2);
+                  Get.find<LibraryController>().selectedTab.value = 1;
+                },
               );
             }),
             SizedBox(height: 20.h),
@@ -48,7 +67,7 @@ class ProfileScreen extends StatelessWidget {
             _cardContainer([
               ProfileTile(
                 icon: Icons.language_rounded,
-                iconColor: AppColors.blue,
+                iconColor: AppColors.primary,
                 title: l10n.language,
                 value: currentLangTag,
                 onTap: () => LanguageBottomSheet.show(context, controller, l10n),
@@ -59,7 +78,7 @@ class ProfileScreen extends StatelessWidget {
             _cardContainer([
               const ProfileTile(
                 icon: Icons.info_outline_rounded,
-                iconColor: AppColors.purple,
+                iconColor: AppColors.primary,
                 title: 'About',
                 value: 'v1.0.0',
               ),

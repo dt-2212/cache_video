@@ -9,8 +9,17 @@ import '../../reel/views/reel_screen.dart';
 import '../../library/views/library_screen.dart';
 import '../../profile/views/profile_screen.dart';
 
-class MainNavigation extends StatelessWidget {
+class MainNavigation extends StatefulWidget {
   const MainNavigation({super.key});
+
+  @override
+  State<MainNavigation> createState() => _MainNavigationState();
+}
+
+class _MainNavigationState extends State<MainNavigation> {
+  late PageController _pageController;
+  final controller = Get.find<MainController>();
+  Worker? _tabWorker;
 
   static const _pages = [
     HomeScreen(),
@@ -20,20 +29,50 @@ class MainNavigation extends StatelessWidget {
   ];
 
   @override
+  void initState() {
+    super.initState();
+    _pageController = PageController(initialPage: controller.currentTab.value);
+
+    _tabWorker = ever(controller.currentTab, (int index) {
+      if (_pageController.hasClients &&
+          _pageController.page?.round() != index) {
+        _pageController.animateToPage(
+          index,
+          duration: const Duration(milliseconds: 200),
+          curve: Curves.easeInOut,
+        );
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _tabWorker?.dispose();
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final controller = Get.find<MainController>();
     final l10n = AppLocalizations.of(context)!;
 
     return Obx(() {
       final selected = controller.currentTab.value;
       final bottomInset = MediaQuery.of(context).padding.bottom;
-      final finalBottomPadding = 8.h + (bottomInset > 0 ? bottomInset * 0.35 : 0.0);
+      final finalBottomPadding =
+          8.h + (bottomInset > 0 ? bottomInset * 0.35 : 0.0);
 
       return Scaffold(
         backgroundColor: AppColors.background,
         body: Stack(
           children: [
-            IndexedStack(index: selected, children: _pages),
+            Positioned.fill(
+              child: PageView(
+                controller: _pageController,
+                physics: const NeverScrollableScrollPhysics(),
+                children: _pages,
+              ),
+            ),
             Positioned(
               left: 0,
               right: 0,

@@ -1,8 +1,9 @@
 import 'package:get/get.dart';
 import '../bindings/initial_binding.dart';
-import '../widgets/feed_viewer_screen.dart';
+import '../../features/feed/views/feed_viewer_screen.dart';
 import '../../features/auth/views/login_screen.dart';
 import '../../features/main/views/main_navigation.dart';
+import '../../features/reel/views/episode_list_screen.dart';
 import '../../features/splash/bindings/splash_binding.dart';
 import '../../features/splash/views/splash_screen.dart';
 import 'app_routes.dart';
@@ -33,6 +34,11 @@ abstract class AppPages {
       name: Routes.feed,
       page: () => const FeedViewerScreen(),
       transition: Transition.downToUp,
+    ),
+    GetPage(
+      name: Routes.episodes,
+      page: () => const EpisodeListScreen(),
+      transition: Transition.rightToLeft,
     ),
   ];
 }

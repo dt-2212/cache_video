@@ -6,4 +6,5 @@ abstract class Routes {
   static const String login = '/login';
   static const String main = '/main';
   static const String feed = '/feed';
+  static const String episodes = '/episodes';
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../../core/models/video.dart';
-import '../../../core/widgets/feed_viewer_screen.dart';
+import '../../feed/views/feed_viewer_screen.dart';
 
 /// Featured carousel banner displayed at the top of the Home screen.
 class FeaturedCarousel extends StatefulWidget {
@@ -14,7 +15,7 @@ class FeaturedCarousel extends StatefulWidget {
 
 class _FeaturedCarouselState extends State<FeaturedCarousel> {
   final _controller = PageController(viewportFraction: 0.9);
-  int _page = 0;
+  final _page = 0.obs;
 
   @override
   void dispose() {
@@ -32,7 +33,7 @@ class _FeaturedCarouselState extends State<FeaturedCarousel> {
           child: PageView.builder(
             controller: _controller,
             itemCount: widget.videos.length,
-            onPageChanged: (i) => setState(() => _page = i),
+            onPageChanged: (i) => _page.value = i,
             itemBuilder: (context, i) {
               final video = widget.videos[i];
               return Padding(
@@ -126,18 +127,20 @@ class _FeaturedCarouselState extends State<FeaturedCarousel> {
           ),
         ),
         const SizedBox(height: 8),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: List.generate(
-            widget.videos.length,
-            (i) => AnimatedContainer(
-              duration: const Duration(milliseconds: 200),
-              margin: const EdgeInsets.symmetric(horizontal: 3),
-              width: i == _page ? 16 : 6,
-              height: 6,
-              decoration: BoxDecoration(
-                color: i == _page ? Colors.white : Colors.white30,
-                borderRadius: BorderRadius.circular(3),
+        Obx(
+          () => Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: List.generate(
+              widget.videos.length,
+              (i) => AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                margin: const EdgeInsets.symmetric(horizontal: 3),
+                width: i == _page.value ? 16 : 6,
+                height: 6,
+                decoration: BoxDecoration(
+                  color: i == _page.value ? Colors.white : Colors.white30,
+                  borderRadius: BorderRadius.circular(3),
+                ),
               ),
             ),
           ),

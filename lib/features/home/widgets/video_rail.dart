@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../../../core/controllers/app_data_controller.dart';
 import '../../../core/models/video.dart';
-import '../../../core/widgets/feed_viewer_screen.dart';
+import '../../feed/views/feed_viewer_screen.dart';
 import '../../../core/widgets/poster_tile.dart';
 
 /// Horizontal rail displaying a category of videos on the Home screen.
@@ -37,8 +39,21 @@ class VideoRail extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             itemCount: videos.length,
             separatorBuilder: (_, _) => const SizedBox(width: 12),
-            itemBuilder: (context, i) =>
-                PosterTile(video: videos[i], onTap: () => openFeed(videos, i)),
+            itemBuilder: (context, i) {
+              final video = videos[i];
+              return PosterTile(
+                video: video,
+                onTap: () {
+                  if (video.isLive) {
+                    openFeed([video], 0);
+                  } else {
+                    final allEpisodes = Get.find<AppDataController>()
+                        .getEpisodesForSeries(video.author);
+                    openFeed(allEpisodes, 0);
+                  }
+                },
+              );
+            },
           ),
         ),
       ],

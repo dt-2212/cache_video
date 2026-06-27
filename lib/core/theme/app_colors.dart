@@ -1,39 +1,59 @@
 import 'package:flutter/material.dart';
 
 abstract class AppColors {
-  static const Color background = Color(0xFF0D0D0F);
-  static const Color surface = Color(0xFF16161A);
-  static const Color surfaceLight = Color(0xFF222228);
+  // ── Backgrounds ──────────────────────────────────────────────
+  // YouTube Dark Mode exact values
+  static const Color background = Color(0xFF0F0F0F);     // YouTube's near-black
+  static const Color surface = Color(0xFF212121);         // YouTube card/sidebar
+  static const Color surfaceLight = Color(0xFF272727);    // YouTube elevated card
 
-  static const Color primary = Color(0xFF8E2DE2); // Electric Purple
-  static const Color accent = Color(0xFFFF512F); // Sunset Coral
-  static const Color destructive = Color(0xFFFF5252);
-  static const Color success = Color(0xFF2ED573);
+  // ── Brand / Accent ────────────────────────────────────────────
+  // TikTok dual-tone accent — iconic, energetic, modern
+  static const Color primary = Color(0xFFFE2C55);         // TikTok signature pink-red
+  static const Color accent = Color(0xFF25F4EE);          // TikTok signature cyan
+  static const Color primaryDark = Color(0xFFCC1A3D);     // Pressed / deep
 
-  static const Color textPrimary = Colors.white;
-  static const Color textSecondary = Colors.white70;
-  static const Color textMuted = Colors.white38;
-  static const Color textDisabled = Colors.white24;
+  // ── Status ────────────────────────────────────────────────────
+  static const Color destructive = Color(0xFFFF4444);
+  static const Color success = Color(0xFF00B894);
+  static const Color live = Color(0xFFFE2C55);            // Live badge matches primary
 
+  // ── Text — YouTube exact values ───────────────────────────────
+  static const Color textPrimary = Color(0xFFF1F1F1);     // YouTube's off-white
+  static const Color textSecondary = Color(0xFFAAAAAA);   // YouTube secondary
+  static const Color textMuted = Color(0xFF717171);       // YouTube dimmed
+  static const Color textDisabled = Color(0xFF3F3F3F);
+
+  // ── Misc ──────────────────────────────────────────────────────
   static const Color googleBlue = Color(0xFF4285F4);
+  static const Color divider = Color(0xFF272727);         // YouTube's divider
 
-  static const Color blue = Color(0xFF4A90E2);
-  static const Color lightBlue = Color(0xFF3498DB);
-  static const Color cyan = Color(0xFF00B4DB);
-  static const Color teal = Color(0xFF50E3C2);
-  static const Color mint = Color(0xFF11998E);
-  static const Color pink = Color(0xFFFC466B);
-  static const Color coral = Color(0xFFFF512F);
-  static const Color purple = Color(0xFF9B59B6);
-  static const Color skyBlue = Color(0xFF2193B0);
+  // ── Poster accent palette — dark, rich, cinematic ─────────────
+  static const Color blue = Color(0xFF1A3A5C);
+  static const Color lightBlue = Color(0xFF1A2C48);
+  static const Color cyan = Color(0xFF0A3040);
+  static const Color teal = Color(0xFF0A3030);
+  static const Color mint = Color(0xFF0F3020);
+  static const Color pink = Color(0xFF4A1030);
+  static const Color coral = Color(0xFF4A1508);
+  static const Color purple = Color(0xFF2A1050);
+  static const Color skyBlue = Color(0xFF0F2238);
+  static const Color slate = Color(0xFF1A2030);
+  static const Color darkGradientStart = Color(0xFF212121);
+  static const Color darkGradientEnd = Color(0xFF0F0F0F);
 
-  static const Color slate = Color(0xFF2C3E50);
-  static const Color darkGradientStart = Color(0xFF2C2C34);
-  static const Color darkGradientEnd = Color(0xFF1A1A20);
-
+  // ── Gradients ─────────────────────────────────────────────────
+  // TikTok's iconic dual-tone gradient
   static const Gradient primaryGradient = LinearGradient(
-    colors: [primary, accent],
+    colors: [primary, Color(0xFFFF6B8A)],   // pink-red → soft pink
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
+  );
+
+  // Subtle dark surface gradient
+  static const Gradient surfaceGradient = LinearGradient(
+    colors: [surfaceLight, surface],
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
   );
 }
