@@ -49,6 +49,10 @@ dependencies:
   # platform packages, so they resolve from the same local tree.
   video_player:
     path: ../flutter-packages/packages/video_player/video_player
+  firebase_core: ^4.11.0
+  firebase_auth: ^6.5.4
+  shared_preferences: ^2.5.5
+  google_sign_in: ^6.2.2
 
 dev_dependencies:
   flutter_test:

@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import '../bindings/initial_binding.dart';
 import '../widgets/feed_viewer_screen.dart';
+import '../../features/auth/views/login_screen.dart';
 import '../../features/main/views/main_navigation.dart';
 import '../../features/splash/bindings/splash_binding.dart';
 import '../../features/splash/views/splash_screen.dart';
@@ -18,6 +19,10 @@ abstract class AppPages {
       name: Routes.splash,
       page: () => const SplashScreen(),
       binding: SplashBinding(),
+    ),
+    GetPage(
+      name: Routes.login,
+      page: () => const LoginScreen(),
     ),
     GetPage(
       name: Routes.main,

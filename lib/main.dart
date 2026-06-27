@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'core/routes/app_pages.dart';
+import 'core/services/auth_service.dart';
 import 'core/services/precache_manager.dart';
 
 void main() async {
@@ -8,6 +9,8 @@ void main() async {
   // Resolve simulator vs. device so the HLS disk cache is only used where it
   // works (real devices).
   await PreCacheManager.init();
+  // Register auth (Google sign-in + guest mode) globally before the UI starts.
+  await Get.putAsync<AuthService>(() => AuthService().init(), permanent: true);
   runApp(const MyApp());
 }
 

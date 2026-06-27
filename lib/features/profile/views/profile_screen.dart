@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../core/controllers/app_data_controller.dart';
+import '../../../core/models/app_user.dart';
+import '../../../core/routes/app_routes.dart';
+import '../../../core/services/auth_service.dart';
 import '../controllers/profile_controller.dart';
 
 /// Profile = user header, premium banner and a settings list (drama-app style).
@@ -11,6 +14,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.find<ProfileController>();
     final data = Get.find<AppDataController>();
+    final auth = AuthService.to;
 
     return Scaffold(
       backgroundColor: Colors.black,
@@ -28,7 +32,11 @@ class ProfileScreen extends StatelessWidget {
           Obx(() {
             data.liked.length;
             data.history.length;
-            return _header(controller.favoriteCount, controller.watchedCount);
+            return _header(
+              auth.user.value,
+              controller.favoriteCount,
+              controller.watchedCount,
+            );
           }),
           const SizedBox(height: 16),
           _premiumBanner(),
@@ -46,31 +54,44 @@ class ProfileScreen extends StatelessWidget {
           _section('Support', const [
             _Tile(Icons.help_outline, 'Help center'),
             _Tile(Icons.info_outline, 'About'),
-            _Tile(Icons.logout, 'Log out'),
           ]),
+          Obx(() => auth.isLoggedIn
+              ? _Tile(Icons.logout, 'Đăng xuất', onTap: () async {
+                  await auth.signOut();
+                  Get.offAllNamed<void>(Routes.login);
+                })
+              : _Tile(Icons.login, 'Đăng nhập',
+                  onTap: () => Get.toNamed<void>(Routes.login))),
           const SizedBox(height: 24),
         ],
       ),
     );
   }
 
-  Widget _header(int favorites, int watched) {
+  Widget _header(AppUser? user, int favorites, int watched) {
+    final photoUrl = user?.photoUrl;
     return Column(
       children: [
-        const CircleAvatar(
+        CircleAvatar(
           radius: 44,
           backgroundColor: Colors.white24,
-          child: Icon(Icons.person, size: 52, color: Colors.white),
+          backgroundImage:
+              photoUrl != null ? NetworkImage(photoUrl) : null,
+          child: photoUrl == null
+              ? const Icon(Icons.person, size: 52, color: Colors.white)
+              : null,
         ),
         const SizedBox(height: 12),
-        const Text(
-          '@your_handle',
-          style: TextStyle(
+        Text(
+          user?.displayName ?? 'Khách',
+          style: const TextStyle(
               color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 4),
-        const Text('ID: 1024 · Free member',
-            style: TextStyle(color: Colors.white54, fontSize: 12)),
+        Text(
+          user?.email ?? 'Đang xem với tư cách khách',
+          style: const TextStyle(color: Colors.white54, fontSize: 12),
+        ),
         const SizedBox(height: 16),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -164,7 +185,8 @@ class ProfileScreen extends StatelessWidget {
 class _Tile extends StatelessWidget {
   final IconData icon;
   final String label;
-  const _Tile(this.icon, this.label);
+  final VoidCallback? onTap;
+  const _Tile(this.icon, this.label, {this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -172,7 +194,7 @@ class _Tile extends StatelessWidget {
       leading: Icon(icon, color: Colors.white),
       title: Text(label, style: const TextStyle(color: Colors.white)),
       trailing: const Icon(Icons.chevron_right, color: Colors.white38),
-      onTap: () {},
+      onTap: onTap ?? () {},
     );
   }
 }
