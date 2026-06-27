@@ -1,45 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-/// A single short video / drama item with the metadata shown across the app.
-class Video {
-  final String id;
-  final String url;
-  final String title;
-  final String category;
-  final String author;
-  final String caption;
-  final String music;
-  final int likes;
-  final int comments;
-  final int shares;
-  final int views;
+part 'video.freezed.dart';
 
-  /// Accent color used for placeholder thumbnails / gradients.
-  final Color thumbColor;
+@freezed
+abstract class Video with _$Video {
+  const factory Video({
+    required String id,
+    required String url,
+    required String title,
+    required String category,
+    required String author,
+    required String caption,
+    required String music,
+    required int likes,
+    required int comments,
+    required int shares,
+    required int views,
+    required Color thumbColor,
+    String? logoUrl,
+    @Default(false) bool isLive,
+  }) = _Video;
 
-  /// Channel/poster logo (the playlist's `tvg-logo`). Null falls back to the
-  /// gradient placeholder built from [thumbColor].
-  final String? logoUrl;
-
-  /// True for live IPTV channels — shows a LIVE badge instead of view counts.
-  final bool isLive;
-
-  const Video({
-    required this.id,
-    required this.url,
-    required this.title,
-    required this.category,
-    required this.author,
-    required this.caption,
-    required this.music,
-    required this.likes,
-    required this.comments,
-    required this.shares,
-    required this.views,
-    required this.thumbColor,
-    this.logoUrl,
-    this.isLive = false,
-  });
+  const Video._();
 
   String get likesLabel => _compact(likes);
   String get commentsLabel => _compact(comments);

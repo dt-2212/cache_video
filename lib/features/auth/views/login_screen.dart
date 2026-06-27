@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
 import '../../../core/routes/app_routes.dart';
 import '../../../core/services/auth_service.dart';
+import '../../../core/theme/app_colors.dart';
+import '../../../l10n/app_localizations.dart';
+import '../widgets/google_button.dart';
 
-/// Entry screen: sign in with Google, or continue as a guest.
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
@@ -21,95 +23,105 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final auth = AuthService.to;
+    final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
-      backgroundColor: Colors.black,
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 28),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              const Spacer(flex: 3),
-              const Icon(Icons.play_circle_fill,
-                  size: 88, color: Color(0xFFED8F03)),
-              const SizedBox(height: 20),
-              const Text(
-                'DramaShort',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 8),
-              const Text(
-                'Xem phim ngắn HLS, mọi lúc mọi nơi',
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white54, fontSize: 14),
-              ),
-              const Spacer(flex: 4),
-              Obx(
-                () => _GoogleButton(
-                  busy: auth.isBusy.value,
-                  onPressed: auth.isBusy.value ? null : _signIn,
-                ),
-              ),
-              const SizedBox(height: 12),
-              TextButton(
-                onPressed: _guest,
-                child: const Text(
-                  'Vào với tư cách khách',
-                  style: TextStyle(color: Colors.white70, fontSize: 15),
-                ),
-              ),
-              const SizedBox(height: 8),
-              const Text(
-                'Khách vẫn xem được phim; đăng nhập để đồng bộ yêu thích & lịch sử.',
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white38, fontSize: 12),
-              ),
-              const Spacer(flex: 2),
+      backgroundColor: AppColors.background,
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: RadialGradient(
+            center: const Alignment(0, -0.4),
+            radius: 1.2,
+            colors: [
+              AppColors.primary.withValues(alpha: 0.15),
+              AppColors.background,
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class _GoogleButton extends StatelessWidget {
-  final bool busy;
-  final VoidCallback? onPressed;
-  const _GoogleButton({required this.busy, required this.onPressed});
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black87,
-        padding: const EdgeInsets.symmetric(vertical: 14),
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(28)),
-      ),
-      child: busy
-          ? const SizedBox(
-              height: 22,
-              width: 22,
-              child: CircularProgressIndicator(strokeWidth: 2),
-            )
-          : Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Icon(Icons.g_mobiledata, size: 28, color: Color(0xFF4285F4)),
-                SizedBox(width: 8),
-                Text('Đăng nhập bằng Google',
-                    style: TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.w600)),
+        child: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 32.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const Spacer(flex: 3),
+                Center(
+                  child: Container(
+                    padding: EdgeInsets.all(20.r),
+                    decoration: BoxDecoration(
+                      color: AppColors.primary.withValues(alpha: 0.1),
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: AppColors.primary.withValues(alpha: 0.2),
+                        width: 2.r,
+                      ),
+                    ),
+                    child: Icon(
+                      Icons.play_arrow_rounded,
+                      size: 64.r,
+                      color: AppColors.primary,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 28.h),
+                Text(
+                  l10n.appTitle,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 34.sp,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 0,
+                  ),
+                ),
+                SizedBox(height: 10.h),
+                Text(
+                  l10n.appSubtitle,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white54,
+                    fontSize: 14.sp,
+                    height: 1.4,
+                  ),
+                ),
+                const Spacer(flex: 4),
+                Obx(
+                  () => GoogleButton(
+                    busy: auth.isBusy.value,
+                    label: l10n.signInWithGoogle,
+                    onPressed: auth.isBusy.value ? null : _signIn,
+                  ),
+                ),
+                SizedBox(height: 16.h),
+                InkWell(
+                  onTap: _guest,
+                  borderRadius: BorderRadius.circular(12.r),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 8.h),
+                    child: Text(
+                      l10n.continueAsGuest,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w600,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 12.h),
+                Text(
+                  l10n.guestNote,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white30, fontSize: 11.sp),
+                ),
+                const Spacer(flex: 2),
               ],
             ),
+          ),
+        ),
+      ),
     );
   }
 }

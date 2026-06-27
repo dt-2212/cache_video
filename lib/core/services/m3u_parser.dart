@@ -62,6 +62,10 @@ abstract class M3uParser {
     return entries;
   }
 
-  static String? _clean(String? v) =>
-      (v == null || v.trim().isEmpty) ? null : v.trim();
+  static String? _clean(String? v) {
+    if (v == null || v.trim().isEmpty) return null;
+    final cleaned = v.trim();
+    if (cleaned.contains('pluto.tv')) return null;
+    return cleaned;
+  }
 }

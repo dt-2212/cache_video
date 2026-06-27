@@ -40,7 +40,7 @@ class _VideoFeedState extends State<VideoFeed> {
   /// Preload the current reel, plus neighboring reels (before and after) so scrolling in either direction is instant.
   void _preCacheAround(int index) {
     final count = widget.videos.length;
-    if (count == 0) return;
+    if (count == 0 || index < 0 || index >= count) return;
 
     final indices = <int>{};
     indices.add(index);
@@ -71,8 +71,10 @@ class _VideoFeedState extends State<VideoFeed> {
 
     debugPrint('📺 VideoFeed preCacheAround index=$index indices=$indices');
     for (final idx in indices) {
-      final v = widget.videos[idx];
-      PreCacheManager.preCache(v.url, live: v.isLive);
+      if (idx >= 0 && idx < widget.videos.length) {
+        final v = widget.videos[idx];
+        PreCacheManager.preCache(v.url, live: v.isLive);
+      }
     }
   }
 

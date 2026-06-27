@@ -1,0 +1,1621 @@
+{
+  "baseUrl": "https://YOUR-PROJECT.pages.dev",
+  "series": [
+    {
+      "slug": "agent-327-operation-barbershop",
+      "title": "Agent 327 Operation Barbershop",
+      "episodeCount": 4,
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "Episode 1",
+          "url": "https://YOUR-PROJECT.pages.dev/series/agent-327-operation-barbershop/ep01/index.m3u8"
+        },
+        {
+          "ep": 2,
+          "title": "Episode 2",
+          "url": "https://YOUR-PROJECT.pages.dev/series/agent-327-operation-barbershop/ep02/index.m3u8"
+        },
+        {
+          "ep": 3,
+          "title": "Episode 3",
+          "url": "https://YOUR-PROJECT.pages.dev/series/agent-327-operation-barbershop/ep03/index.m3u8"
+        },
+        {
+          "ep": 4,
+          "title": "Episode 4",
+          "url": "https://YOUR-PROJECT.pages.dev/series/agent-327-operation-barbershop/ep04/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "big-buck-bunny",
+      "title": "Big Buck Bunny",
+      "episodeCount": 11,
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "Episode 1",
+          "url": "https://YOUR-PROJECT.pages.dev/series/big-buck-bunny/ep01/index.m3u8"
+        },
+        {
+          "ep": 2,
+          "title": "Episode 2",
+          "url": "https://YOUR-PROJECT.pages.dev/series/big-buck-bunny/ep02/index.m3u8"
+        },
+        {
+          "ep": 3,
+          "title": "Episode 3",
+          "url": "https://YOUR-PROJECT.pages.dev/series/big-buck-bunny/ep03/index.m3u8"
+        },
+        {
+          "ep": 4,
+          "title": "Episode 4",
+          "url": "https://YOUR-PROJECT.pages.dev/series/big-buck-bunny/ep04/index.m3u8"
+        },
+        {
+          "ep": 5,
+          "title": "Episode 5",
+          "url": "https://YOUR-PROJECT.pages.dev/series/big-buck-bunny/ep05/index.m3u8"
+        },
+        {
+          "ep": 6,
+          "title": "Episode 6",
+          "url": "https://YOUR-PROJECT.pages.dev/series/big-buck-bunny/ep06/index.m3u8"
+        },
+        {
+          "ep": 7,
+          "title": "Episode 7",
+          "url": "https://YOUR-PROJECT.pages.dev/series/big-buck-bunny/ep07/index.m3u8"
+        },
+        {
+          "ep": 8,
+          "title": "Episode 8",
+          "url": "https://YOUR-PROJECT.pages.dev/series/big-buck-bunny/ep08/index.m3u8"
+        },
+        {
+          "ep": 9,
+          "title": "Episode 9",
+          "url": "https://YOUR-PROJECT.pages.dev/series/big-buck-bunny/ep09/index.m3u8"
+        },
+        {
+          "ep": 10,
+          "title": "Episode 10",
+          "url": "https://YOUR-PROJECT.pages.dev/series/big-buck-bunny/ep10/index.m3u8"
+        },
+        {
+          "ep": 11,
+          "title": "Episode 11",
+          "url": "https://YOUR-PROJECT.pages.dev/series/big-buck-bunny/ep11/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "cosmos-laundromat",
+      "title": "Cosmos Laundromat",
+      "episodeCount": 13,
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "Episode 1",
+          "url": "https://YOUR-PROJECT.pages.dev/series/cosmos-laundromat/ep01/index.m3u8"
+        },
+        {
+          "ep": 2,
+          "title": "Episode 2",
+          "url": "https://YOUR-PROJECT.pages.dev/series/cosmos-laundromat/ep02/index.m3u8"
+        },
+        {
+          "ep": 3,
+          "title": "Episode 3",
+          "url": "https://YOUR-PROJECT.pages.dev/series/cosmos-laundromat/ep03/index.m3u8"
+        },
+        {
+          "ep": 4,
+          "title": "Episode 4",
+          "url": "https://YOUR-PROJECT.pages.dev/series/cosmos-laundromat/ep04/index.m3u8"
+        },
+        {
+          "ep": 5,
+          "title": "Episode 5",
+          "url": "https://YOUR-PROJECT.pages.dev/series/cosmos-laundromat/ep05/index.m3u8"
+        },
+        {
+          "ep": 6,
+          "title": "Episode 6",
+          "url": "https://YOUR-PROJECT.pages.dev/series/cosmos-laundromat/ep06/index.m3u8"
+        },
+        {
+          "ep": 7,
+          "title": "Episode 7",
+          "url": "https://YOUR-PROJECT.pages.dev/series/cosmos-laundromat/ep07/index.m3u8"
+        },
+        {
+          "ep": 8,
+          "title": "Episode 8",
+          "url": "https://YOUR-PROJECT.pages.dev/series/cosmos-laundromat/ep08/index.m3u8"
+        },
+        {
+          "ep": 9,
+          "title": "Episode 9",
+          "url": "https://YOUR-PROJECT.pages.dev/series/cosmos-laundromat/ep09/index.m3u8"
+        },
+        {
+          "ep": 10,
+          "title": "Episode 10",
+          "url": "https://YOUR-PROJECT.pages.dev/series/cosmos-laundromat/ep10/index.m3u8"
+        },
+        {
+          "ep": 11,
+          "title": "Episode 11",
+          "url": "https://YOUR-PROJECT.pages.dev/series/cosmos-laundromat/ep11/index.m3u8"
+        },
+        {
+          "ep": 12,
+          "title": "Episode 12",
+          "url": "https://YOUR-PROJECT.pages.dev/series/cosmos-laundromat/ep12/index.m3u8"
+        },
+        {
+          "ep": 13,
+          "title": "Episode 13",
+          "url": "https://YOUR-PROJECT.pages.dev/series/cosmos-laundromat/ep13/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "dune-official-trailer",
+      "title": "Dune Official Trailer",
+      "episodeCount": 4,
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "Episode 1",
+          "url": "https://YOUR-PROJECT.pages.dev/series/dune-official-trailer/ep01/index.m3u8"
+        },
+        {
+          "ep": 2,
+          "title": "Episode 2",
+          "url": "https://YOUR-PROJECT.pages.dev/series/dune-official-trailer/ep02/index.m3u8"
+        },
+        {
+          "ep": 3,
+          "title": "Episode 3",
+          "url": "https://YOUR-PROJECT.pages.dev/series/dune-official-trailer/ep03/index.m3u8"
+        },
+        {
+          "ep": 4,
+          "title": "Episode 4",
+          "url": "https://YOUR-PROJECT.pages.dev/series/dune-official-trailer/ep04/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "easy-street-chaplin",
+      "title": "Easy Street Chaplin",
+      "episodeCount": 24,
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "Episode 1",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep01/index.m3u8"
+        },
+        {
+          "ep": 2,
+          "title": "Episode 2",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep02/index.m3u8"
+        },
+        {
+          "ep": 3,
+          "title": "Episode 3",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep03/index.m3u8"
+        },
+        {
+          "ep": 4,
+          "title": "Episode 4",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep04/index.m3u8"
+        },
+        {
+          "ep": 5,
+          "title": "Episode 5",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep05/index.m3u8"
+        },
+        {
+          "ep": 6,
+          "title": "Episode 6",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep06/index.m3u8"
+        },
+        {
+          "ep": 7,
+          "title": "Episode 7",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep07/index.m3u8"
+        },
+        {
+          "ep": 8,
+          "title": "Episode 8",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep08/index.m3u8"
+        },
+        {
+          "ep": 9,
+          "title": "Episode 9",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep09/index.m3u8"
+        },
+        {
+          "ep": 10,
+          "title": "Episode 10",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep10/index.m3u8"
+        },
+        {
+          "ep": 11,
+          "title": "Episode 11",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep11/index.m3u8"
+        },
+        {
+          "ep": 12,
+          "title": "Episode 12",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep12/index.m3u8"
+        },
+        {
+          "ep": 13,
+          "title": "Episode 13",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep13/index.m3u8"
+        },
+        {
+          "ep": 14,
+          "title": "Episode 14",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep14/index.m3u8"
+        },
+        {
+          "ep": 15,
+          "title": "Episode 15",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep15/index.m3u8"
+        },
+        {
+          "ep": 16,
+          "title": "Episode 16",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep16/index.m3u8"
+        },
+        {
+          "ep": 17,
+          "title": "Episode 17",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep17/index.m3u8"
+        },
+        {
+          "ep": 18,
+          "title": "Episode 18",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep18/index.m3u8"
+        },
+        {
+          "ep": 19,
+          "title": "Episode 19",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep19/index.m3u8"
+        },
+        {
+          "ep": 20,
+          "title": "Episode 20",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep20/index.m3u8"
+        },
+        {
+          "ep": 21,
+          "title": "Episode 21",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep21/index.m3u8"
+        },
+        {
+          "ep": 22,
+          "title": "Episode 22",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep22/index.m3u8"
+        },
+        {
+          "ep": 23,
+          "title": "Episode 23",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep23/index.m3u8"
+        },
+        {
+          "ep": 24,
+          "title": "Episode 24",
+          "url": "https://YOUR-PROJECT.pages.dev/series/easy-street-chaplin/ep24/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "elephants-dream",
+      "title": "Elephants Dream",
+      "episodeCount": 11,
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "Episode 1",
+          "url": "https://YOUR-PROJECT.pages.dev/series/elephants-dream/ep01/index.m3u8"
+        },
+        {
+          "ep": 2,
+          "title": "Episode 2",
+          "url": "https://YOUR-PROJECT.pages.dev/series/elephants-dream/ep02/index.m3u8"
+        },
+        {
+          "ep": 3,
+          "title": "Episode 3",
+          "url": "https://YOUR-PROJECT.pages.dev/series/elephants-dream/ep03/index.m3u8"
+        },
+        {
+          "ep": 4,
+          "title": "Episode 4",
+          "url": "https://YOUR-PROJECT.pages.dev/series/elephants-dream/ep04/index.m3u8"
+        },
+        {
+          "ep": 5,
+          "title": "Episode 5",
+          "url": "https://YOUR-PROJECT.pages.dev/series/elephants-dream/ep05/index.m3u8"
+        },
+        {
+          "ep": 6,
+          "title": "Episode 6",
+          "url": "https://YOUR-PROJECT.pages.dev/series/elephants-dream/ep06/index.m3u8"
+        },
+        {
+          "ep": 7,
+          "title": "Episode 7",
+          "url": "https://YOUR-PROJECT.pages.dev/series/elephants-dream/ep07/index.m3u8"
+        },
+        {
+          "ep": 8,
+          "title": "Episode 8",
+          "url": "https://YOUR-PROJECT.pages.dev/series/elephants-dream/ep08/index.m3u8"
+        },
+        {
+          "ep": 9,
+          "title": "Episode 9",
+          "url": "https://YOUR-PROJECT.pages.dev/series/elephants-dream/ep09/index.m3u8"
+        },
+        {
+          "ep": 10,
+          "title": "Episode 10",
+          "url": "https://YOUR-PROJECT.pages.dev/series/elephants-dream/ep10/index.m3u8"
+        },
+        {
+          "ep": 11,
+          "title": "Episode 11",
+          "url": "https://YOUR-PROJECT.pages.dev/series/elephants-dream/ep11/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "harry-potter-and-the-sorcerer-s-stone-2001-official-trailer-daniel-radcliffe-movie-hd",
+      "title": "Harry Potter And The Sorcerer S Stone 2001 Official Trailer Daniel Radcliffe Movie Hd",
+      "episodeCount": 3,
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "Episode 1",
+          "url": "https://YOUR-PROJECT.pages.dev/series/harry-potter-and-the-sorcerer-s-stone-2001-official-trailer-daniel-radcliffe-movie-hd/ep01/index.m3u8"
+        },
+        {
+          "ep": 2,
+          "title": "Episode 2",
+          "url": "https://YOUR-PROJECT.pages.dev/series/harry-potter-and-the-sorcerer-s-stone-2001-official-trailer-daniel-radcliffe-movie-hd/ep02/index.m3u8"
+        },
+        {
+          "ep": 3,
+          "title": "Episode 3",
+          "url": "https://YOUR-PROJECT.pages.dev/series/harry-potter-and-the-sorcerer-s-stone-2001-official-trailer-daniel-radcliffe-movie-hd/ep03/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "marvel-studios-avengers-endgame-official-trailer",
+      "title": "Marvel Studios Avengers Endgame Official Trailer",
+      "episodeCount": 3,
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "Episode 1",
+          "url": "https://YOUR-PROJECT.pages.dev/series/marvel-studios-avengers-endgame-official-trailer/ep01/index.m3u8"
+        },
+        {
+          "ep": 2,
+          "title": "Episode 2",
+          "url": "https://YOUR-PROJECT.pages.dev/series/marvel-studios-avengers-endgame-official-trailer/ep02/index.m3u8"
+        },
+        {
+          "ep": 3,
+          "title": "Episode 3",
+          "url": "https://YOUR-PROJECT.pages.dev/series/marvel-studios-avengers-endgame-official-trailer/ep03/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "marvel-studios-avengers-infinity-war-official-trailer",
+      "title": "Marvel Studios Avengers Infinity War Official Trailer",
+      "episodeCount": 3,
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "Episode 1",
+          "url": "https://YOUR-PROJECT.pages.dev/series/marvel-studios-avengers-infinity-war-official-trailer/ep01/index.m3u8"
+        },
+        {
+          "ep": 2,
+          "title": "Episode 2",
+          "url": "https://YOUR-PROJECT.pages.dev/series/marvel-studios-avengers-infinity-war-official-trailer/ep02/index.m3u8"
+        },
+        {
+          "ep": 3,
+          "title": "Episode 3",
+          "url": "https://YOUR-PROJECT.pages.dev/series/marvel-studios-avengers-infinity-war-official-trailer/ep03/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "one-week-buster-keaton",
+      "title": "One Week Buster Keaton",
+      "episodeCount": 25,
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "Episode 1",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep01/index.m3u8"
+        },
+        {
+          "ep": 2,
+          "title": "Episode 2",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep02/index.m3u8"
+        },
+        {
+          "ep": 3,
+          "title": "Episode 3",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep03/index.m3u8"
+        },
+        {
+          "ep": 4,
+          "title": "Episode 4",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep04/index.m3u8"
+        },
+        {
+          "ep": 5,
+          "title": "Episode 5",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep05/index.m3u8"
+        },
+        {
+          "ep": 6,
+          "title": "Episode 6",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep06/index.m3u8"
+        },
+        {
+          "ep": 7,
+          "title": "Episode 7",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep07/index.m3u8"
+        },
+        {
+          "ep": 8,
+          "title": "Episode 8",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep08/index.m3u8"
+        },
+        {
+          "ep": 9,
+          "title": "Episode 9",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep09/index.m3u8"
+        },
+        {
+          "ep": 10,
+          "title": "Episode 10",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep10/index.m3u8"
+        },
+        {
+          "ep": 11,
+          "title": "Episode 11",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep11/index.m3u8"
+        },
+        {
+          "ep": 12,
+          "title": "Episode 12",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep12/index.m3u8"
+        },
+        {
+          "ep": 13,
+          "title": "Episode 13",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep13/index.m3u8"
+        },
+        {
+          "ep": 14,
+          "title": "Episode 14",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep14/index.m3u8"
+        },
+        {
+          "ep": 15,
+          "title": "Episode 15",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep15/index.m3u8"
+        },
+        {
+          "ep": 16,
+          "title": "Episode 16",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep16/index.m3u8"
+        },
+        {
+          "ep": 17,
+          "title": "Episode 17",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep17/index.m3u8"
+        },
+        {
+          "ep": 18,
+          "title": "Episode 18",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep18/index.m3u8"
+        },
+        {
+          "ep": 19,
+          "title": "Episode 19",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep19/index.m3u8"
+        },
+        {
+          "ep": 20,
+          "title": "Episode 20",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep20/index.m3u8"
+        },
+        {
+          "ep": 21,
+          "title": "Episode 21",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep21/index.m3u8"
+        },
+        {
+          "ep": 22,
+          "title": "Episode 22",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep22/index.m3u8"
+        },
+        {
+          "ep": 23,
+          "title": "Episode 23",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep23/index.m3u8"
+        },
+        {
+          "ep": 24,
+          "title": "Episode 24",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep24/index.m3u8"
+        },
+        {
+          "ep": 25,
+          "title": "Episode 25",
+          "url": "https://YOUR-PROJECT.pages.dev/series/one-week-buster-keaton/ep25/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "sintel",
+      "title": "Sintel",
+      "episodeCount": 15,
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "Episode 1",
+          "url": "https://YOUR-PROJECT.pages.dev/series/sintel/ep01/index.m3u8"
+        },
+        {
+          "ep": 2,
+          "title": "Episode 2",
+          "url": "https://YOUR-PROJECT.pages.dev/series/sintel/ep02/index.m3u8"
+        },
+        {
+          "ep": 3,
+          "title": "Episode 3",
+          "url": "https://YOUR-PROJECT.pages.dev/series/sintel/ep03/index.m3u8"
+        },
+        {
+          "ep": 4,
+          "title": "Episode 4",
+          "url": "https://YOUR-PROJECT.pages.dev/series/sintel/ep04/index.m3u8"
+        },
+        {
+          "ep": 5,
+          "title": "Episode 5",
+          "url": "https://YOUR-PROJECT.pages.dev/series/sintel/ep05/index.m3u8"
+        },
+        {
+          "ep": 6,
+          "title": "Episode 6",
+          "url": "https://YOUR-PROJECT.pages.dev/series/sintel/ep06/index.m3u8"
+        },
+        {
+          "ep": 7,
+          "title": "Episode 7",
+          "url": "https://YOUR-PROJECT.pages.dev/series/sintel/ep07/index.m3u8"
+        },
+        {
+          "ep": 8,
+          "title": "Episode 8",
+          "url": "https://YOUR-PROJECT.pages.dev/series/sintel/ep08/index.m3u8"
+        },
+        {
+          "ep": 9,
+          "title": "Episode 9",
+          "url": "https://YOUR-PROJECT.pages.dev/series/sintel/ep09/index.m3u8"
+        },
+        {
+          "ep": 10,
+          "title": "Episode 10",
+          "url": "https://YOUR-PROJECT.pages.dev/series/sintel/ep10/index.m3u8"
+        },
+        {
+          "ep": 11,
+          "title": "Episode 11",
+          "url": "https://YOUR-PROJECT.pages.dev/series/sintel/ep11/index.m3u8"
+        },
+        {
+          "ep": 12,
+          "title": "Episode 12",
+          "url": "https://YOUR-PROJECT.pages.dev/series/sintel/ep12/index.m3u8"
+        },
+        {
+          "ep": 13,
+          "title": "Episode 13",
+          "url": "https://YOUR-PROJECT.pages.dev/series/sintel/ep13/index.m3u8"
+        },
+        {
+          "ep": 14,
+          "title": "Episode 14",
+          "url": "https://YOUR-PROJECT.pages.dev/series/sintel/ep14/index.m3u8"
+        },
+        {
+          "ep": 15,
+          "title": "Episode 15",
+          "url": "https://YOUR-PROJECT.pages.dev/series/sintel/ep15/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "star-wars-the-rise-of-skywalker-final-trailer",
+      "title": "Star Wars The Rise Of Skywalker Final Trailer",
+      "episodeCount": 3,
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "Episode 1",
+          "url": "https://YOUR-PROJECT.pages.dev/series/star-wars-the-rise-of-skywalker-final-trailer/ep01/index.m3u8"
+        },
+        {
+          "ep": 2,
+          "title": "Episode 2",
+          "url": "https://YOUR-PROJECT.pages.dev/series/star-wars-the-rise-of-skywalker-final-trailer/ep02/index.m3u8"
+        },
+        {
+          "ep": 3,
+          "title": "Episode 3",
+          "url": "https://YOUR-PROJECT.pages.dev/series/star-wars-the-rise-of-skywalker-final-trailer/ep03/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "tears-of-steel",
+      "title": "Tears Of Steel",
+      "episodeCount": 13,
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "Episode 1",
+          "url": "https://YOUR-PROJECT.pages.dev/series/tears-of-steel/ep01/index.m3u8"
+        },
+        {
+          "ep": 2,
+          "title": "Episode 2",
+          "url": "https://YOUR-PROJECT.pages.dev/series/tears-of-steel/ep02/index.m3u8"
+        },
+        {
+          "ep": 3,
+          "title": "Episode 3",
+          "url": "https://YOUR-PROJECT.pages.dev/series/tears-of-steel/ep03/index.m3u8"
+        },
+        {
+          "ep": 4,
+          "title": "Episode 4",
+          "url": "https://YOUR-PROJECT.pages.dev/series/tears-of-steel/ep04/index.m3u8"
+        },
+        {
+          "ep": 5,
+          "title": "Episode 5",
+          "url": "https://YOUR-PROJECT.pages.dev/series/tears-of-steel/ep05/index.m3u8"
+        },
+        {
+          "ep": 6,
+          "title": "Episode 6",
+          "url": "https://YOUR-PROJECT.pages.dev/series/tears-of-steel/ep06/index.m3u8"
+        },
+        {
+          "ep": 7,
+          "title": "Episode 7",
+          "url": "https://YOUR-PROJECT.pages.dev/series/tears-of-steel/ep07/index.m3u8"
+        },
+        {
+          "ep": 8,
+          "title": "Episode 8",
+          "url": "https://YOUR-PROJECT.pages.dev/series/tears-of-steel/ep08/index.m3u8"
+        },
+        {
+          "ep": 9,
+          "title": "Episode 9",
+          "url": "https://YOUR-PROJECT.pages.dev/series/tears-of-steel/ep09/index.m3u8"
+        },
+        {
+          "ep": 10,
+          "title": "Episode 10",
+          "url": "https://YOUR-PROJECT.pages.dev/series/tears-of-steel/ep10/index.m3u8"
+        },
+        {
+          "ep": 11,
+          "title": "Episode 11",
+          "url": "https://YOUR-PROJECT.pages.dev/series/tears-of-steel/ep11/index.m3u8"
+        },
+        {
+          "ep": 12,
+          "title": "Episode 12",
+          "url": "https://YOUR-PROJECT.pages.dev/series/tears-of-steel/ep12/index.m3u8"
+        },
+        {
+          "ep": 13,
+          "title": "Episode 13",
+          "url": "https://YOUR-PROJECT.pages.dev/series/tears-of-steel/ep13/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "the-adventurer-chaplin",
+      "title": "The Adventurer Chaplin",
+      "episodeCount": 24,
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "Episode 1",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep01/index.m3u8"
+        },
+        {
+          "ep": 2,
+          "title": "Episode 2",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep02/index.m3u8"
+        },
+        {
+          "ep": 3,
+          "title": "Episode 3",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep03/index.m3u8"
+        },
+        {
+          "ep": 4,
+          "title": "Episode 4",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep04/index.m3u8"
+        },
+        {
+          "ep": 5,
+          "title": "Episode 5",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep05/index.m3u8"
+        },
+        {
+          "ep": 6,
+          "title": "Episode 6",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep06/index.m3u8"
+        },
+        {
+          "ep": 7,
+          "title": "Episode 7",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep07/index.m3u8"
+        },
+        {
+          "ep": 8,
+          "title": "Episode 8",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep08/index.m3u8"
+        },
+        {
+          "ep": 9,
+          "title": "Episode 9",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep09/index.m3u8"
+        },
+        {
+          "ep": 10,
+          "title": "Episode 10",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep10/index.m3u8"
+        },
+        {
+          "ep": 11,
+          "title": "Episode 11",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep11/index.m3u8"
+        },
+        {
+          "ep": 12,
+          "title": "Episode 12",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep12/index.m3u8"
+        },
+        {
+          "ep": 13,
+          "title": "Episode 13",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep13/index.m3u8"
+        },
+        {
+          "ep": 14,
+          "title": "Episode 14",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep14/index.m3u8"
+        },
+        {
+          "ep": 15,
+          "title": "Episode 15",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep15/index.m3u8"
+        },
+        {
+          "ep": 16,
+          "title": "Episode 16",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep16/index.m3u8"
+        },
+        {
+          "ep": 17,
+          "title": "Episode 17",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep17/index.m3u8"
+        },
+        {
+          "ep": 18,
+          "title": "Episode 18",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep18/index.m3u8"
+        },
+        {
+          "ep": 19,
+          "title": "Episode 19",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep19/index.m3u8"
+        },
+        {
+          "ep": 20,
+          "title": "Episode 20",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep20/index.m3u8"
+        },
+        {
+          "ep": 21,
+          "title": "Episode 21",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep21/index.m3u8"
+        },
+        {
+          "ep": 22,
+          "title": "Episode 22",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep22/index.m3u8"
+        },
+        {
+          "ep": 23,
+          "title": "Episode 23",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep23/index.m3u8"
+        },
+        {
+          "ep": 24,
+          "title": "Episode 24",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-adventurer-chaplin/ep24/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "the-batman-main-trailer",
+      "title": "The Batman Main Trailer",
+      "episodeCount": 3,
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "Episode 1",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-batman-main-trailer/ep01/index.m3u8"
+        },
+        {
+          "ep": 2,
+          "title": "Episode 2",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-batman-main-trailer/ep02/index.m3u8"
+        },
+        {
+          "ep": 3,
+          "title": "Episode 3",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-batman-main-trailer/ep03/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "the-count-chaplin",
+      "title": "The Count Chaplin",
+      "episodeCount": 24,
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "Episode 1",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep01/index.m3u8"
+        },
+        {
+          "ep": 2,
+          "title": "Episode 2",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep02/index.m3u8"
+        },
+        {
+          "ep": 3,
+          "title": "Episode 3",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep03/index.m3u8"
+        },
+        {
+          "ep": 4,
+          "title": "Episode 4",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep04/index.m3u8"
+        },
+        {
+          "ep": 5,
+          "title": "Episode 5",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep05/index.m3u8"
+        },
+        {
+          "ep": 6,
+          "title": "Episode 6",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep06/index.m3u8"
+        },
+        {
+          "ep": 7,
+          "title": "Episode 7",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep07/index.m3u8"
+        },
+        {
+          "ep": 8,
+          "title": "Episode 8",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep08/index.m3u8"
+        },
+        {
+          "ep": 9,
+          "title": "Episode 9",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep09/index.m3u8"
+        },
+        {
+          "ep": 10,
+          "title": "Episode 10",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep10/index.m3u8"
+        },
+        {
+          "ep": 11,
+          "title": "Episode 11",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep11/index.m3u8"
+        },
+        {
+          "ep": 12,
+          "title": "Episode 12",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep12/index.m3u8"
+        },
+        {
+          "ep": 13,
+          "title": "Episode 13",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep13/index.m3u8"
+        },
+        {
+          "ep": 14,
+          "title": "Episode 14",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep14/index.m3u8"
+        },
+        {
+          "ep": 15,
+          "title": "Episode 15",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep15/index.m3u8"
+        },
+        {
+          "ep": 16,
+          "title": "Episode 16",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep16/index.m3u8"
+        },
+        {
+          "ep": 17,
+          "title": "Episode 17",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep17/index.m3u8"
+        },
+        {
+          "ep": 18,
+          "title": "Episode 18",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep18/index.m3u8"
+        },
+        {
+          "ep": 19,
+          "title": "Episode 19",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep19/index.m3u8"
+        },
+        {
+          "ep": 20,
+          "title": "Episode 20",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep20/index.m3u8"
+        },
+        {
+          "ep": 21,
+          "title": "Episode 21",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep21/index.m3u8"
+        },
+        {
+          "ep": 22,
+          "title": "Episode 22",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep22/index.m3u8"
+        },
+        {
+          "ep": 23,
+          "title": "Episode 23",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep23/index.m3u8"
+        },
+        {
+          "ep": 24,
+          "title": "Episode 24",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-count-chaplin/ep24/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "the-immigrant-chaplin",
+      "title": "The Immigrant Chaplin",
+      "episodeCount": 26,
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "Episode 1",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep01/index.m3u8"
+        },
+        {
+          "ep": 2,
+          "title": "Episode 2",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep02/index.m3u8"
+        },
+        {
+          "ep": 3,
+          "title": "Episode 3",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep03/index.m3u8"
+        },
+        {
+          "ep": 4,
+          "title": "Episode 4",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep04/index.m3u8"
+        },
+        {
+          "ep": 5,
+          "title": "Episode 5",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep05/index.m3u8"
+        },
+        {
+          "ep": 6,
+          "title": "Episode 6",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep06/index.m3u8"
+        },
+        {
+          "ep": 7,
+          "title": "Episode 7",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep07/index.m3u8"
+        },
+        {
+          "ep": 8,
+          "title": "Episode 8",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep08/index.m3u8"
+        },
+        {
+          "ep": 9,
+          "title": "Episode 9",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep09/index.m3u8"
+        },
+        {
+          "ep": 10,
+          "title": "Episode 10",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep10/index.m3u8"
+        },
+        {
+          "ep": 11,
+          "title": "Episode 11",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep11/index.m3u8"
+        },
+        {
+          "ep": 12,
+          "title": "Episode 12",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep12/index.m3u8"
+        },
+        {
+          "ep": 13,
+          "title": "Episode 13",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep13/index.m3u8"
+        },
+        {
+          "ep": 14,
+          "title": "Episode 14",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep14/index.m3u8"
+        },
+        {
+          "ep": 15,
+          "title": "Episode 15",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep15/index.m3u8"
+        },
+        {
+          "ep": 16,
+          "title": "Episode 16",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep16/index.m3u8"
+        },
+        {
+          "ep": 17,
+          "title": "Episode 17",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep17/index.m3u8"
+        },
+        {
+          "ep": 18,
+          "title": "Episode 18",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep18/index.m3u8"
+        },
+        {
+          "ep": 19,
+          "title": "Episode 19",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep19/index.m3u8"
+        },
+        {
+          "ep": 20,
+          "title": "Episode 20",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep20/index.m3u8"
+        },
+        {
+          "ep": 21,
+          "title": "Episode 21",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep21/index.m3u8"
+        },
+        {
+          "ep": 22,
+          "title": "Episode 22",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep22/index.m3u8"
+        },
+        {
+          "ep": 23,
+          "title": "Episode 23",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep23/index.m3u8"
+        },
+        {
+          "ep": 24,
+          "title": "Episode 24",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep24/index.m3u8"
+        },
+        {
+          "ep": 25,
+          "title": "Episode 25",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep25/index.m3u8"
+        },
+        {
+          "ep": 26,
+          "title": "Episode 26",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-immigrant-chaplin/ep26/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "the-pawnshop-chaplin",
+      "title": "The Pawnshop Chaplin",
+      "episodeCount": 24,
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "Episode 1",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep01/index.m3u8"
+        },
+        {
+          "ep": 2,
+          "title": "Episode 2",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep02/index.m3u8"
+        },
+        {
+          "ep": 3,
+          "title": "Episode 3",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep03/index.m3u8"
+        },
+        {
+          "ep": 4,
+          "title": "Episode 4",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep04/index.m3u8"
+        },
+        {
+          "ep": 5,
+          "title": "Episode 5",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep05/index.m3u8"
+        },
+        {
+          "ep": 6,
+          "title": "Episode 6",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep06/index.m3u8"
+        },
+        {
+          "ep": 7,
+          "title": "Episode 7",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep07/index.m3u8"
+        },
+        {
+          "ep": 8,
+          "title": "Episode 8",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep08/index.m3u8"
+        },
+        {
+          "ep": 9,
+          "title": "Episode 9",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep09/index.m3u8"
+        },
+        {
+          "ep": 10,
+          "title": "Episode 10",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep10/index.m3u8"
+        },
+        {
+          "ep": 11,
+          "title": "Episode 11",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep11/index.m3u8"
+        },
+        {
+          "ep": 12,
+          "title": "Episode 12",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep12/index.m3u8"
+        },
+        {
+          "ep": 13,
+          "title": "Episode 13",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep13/index.m3u8"
+        },
+        {
+          "ep": 14,
+          "title": "Episode 14",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep14/index.m3u8"
+        },
+        {
+          "ep": 15,
+          "title": "Episode 15",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep15/index.m3u8"
+        },
+        {
+          "ep": 16,
+          "title": "Episode 16",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep16/index.m3u8"
+        },
+        {
+          "ep": 17,
+          "title": "Episode 17",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep17/index.m3u8"
+        },
+        {
+          "ep": 18,
+          "title": "Episode 18",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep18/index.m3u8"
+        },
+        {
+          "ep": 19,
+          "title": "Episode 19",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep19/index.m3u8"
+        },
+        {
+          "ep": 20,
+          "title": "Episode 20",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep20/index.m3u8"
+        },
+        {
+          "ep": 21,
+          "title": "Episode 21",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep21/index.m3u8"
+        },
+        {
+          "ep": 22,
+          "title": "Episode 22",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep22/index.m3u8"
+        },
+        {
+          "ep": 23,
+          "title": "Episode 23",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep23/index.m3u8"
+        },
+        {
+          "ep": 24,
+          "title": "Episode 24",
+          "url": "https://YOUR-PROJECT.pages.dev/series/the-pawnshop-chaplin/ep24/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "world-s-largest-rope-swing",
+      "title": "World S Largest Rope Swing",
+      "episodeCount": 3,
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "Episode 1",
+          "url": "https://YOUR-PROJECT.pages.dev/series/world-s-largest-rope-swing/ep01/index.m3u8"
+        },
+        {
+          "ep": 2,
+          "title": "Episode 2",
+          "url": "https://YOUR-PROJECT.pages.dev/series/world-s-largest-rope-swing/ep02/index.m3u8"
+        },
+        {
+          "ep": 3,
+          "title": "Episode 3",
+          "url": "https://YOUR-PROJECT.pages.dev/series/world-s-largest-rope-swing/ep03/index.m3u8"
+        }
+      ]
+    }
+  ],
+  "feed": [
+    {
+      "slug": "am-nhac",
+      "name": "Music",
+      "videos": [
+        {
+          "id": "am-nhac/alan-walker-faded",
+          "title": "Alan Walker Faded",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/am-nhac/alan-walker-faded/index.m3u8"
+        },
+        {
+          "id": "am-nhac/two-steps-from-hell-protectors-of-the-earth",
+          "title": "Two Steps From Hell Protectors Of The Earth",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/am-nhac/two-steps-from-hell-protectors-of-the-earth/index.m3u8"
+        },
+        {
+          "id": "am-nhac/warriors-season-2020-cinematic-league-of-legends-ft-2wei-and-edda-hayes",
+          "title": "Warriors Season 2020 Cinematic League Of Legends Ft 2Wei And Edda Hayes",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/am-nhac/warriors-season-2020-cinematic-league-of-legends-ft-2wei-and-edda-hayes/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "dai-duong",
+      "name": "Ocean",
+      "videos": [
+        {
+          "id": "dai-duong/pexels-31059311",
+          "title": "Pexels 31059311",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/dai-duong/pexels-31059311/index.m3u8"
+        },
+        {
+          "id": "dai-duong/pexels-31855228",
+          "title": "Pexels 31855228",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/dai-duong/pexels-31855228/index.m3u8"
+        },
+        {
+          "id": "dai-duong/pexels-32297084",
+          "title": "Pexels 32297084",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/dai-duong/pexels-32297084/index.m3u8"
+        },
+        {
+          "id": "dai-duong/pexels-32297106",
+          "title": "Pexels 32297106",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/dai-duong/pexels-32297106/index.m3u8"
+        },
+        {
+          "id": "dai-duong/pexels-33860693",
+          "title": "Pexels 33860693",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/dai-duong/pexels-33860693/index.m3u8"
+        },
+        {
+          "id": "dai-duong/pexels-34127821",
+          "title": "Pexels 34127821",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/dai-duong/pexels-34127821/index.m3u8"
+        },
+        {
+          "id": "dai-duong/pexels-34227596",
+          "title": "Pexels 34227596",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/dai-duong/pexels-34227596/index.m3u8"
+        },
+        {
+          "id": "dai-duong/pexels-35737444",
+          "title": "Pexels 35737444",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/dai-duong/pexels-35737444/index.m3u8"
+        },
+        {
+          "id": "dai-duong/pexels-36155360",
+          "title": "Pexels 36155360",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/dai-duong/pexels-36155360/index.m3u8"
+        },
+        {
+          "id": "dai-duong/pexels-37885088",
+          "title": "Pexels 37885088",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/dai-duong/pexels-37885088/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "hanh-dong",
+      "name": "Action",
+      "videos": [
+        {
+          "id": "hanh-dong/pexels-20521157",
+          "title": "Pexels 20521157",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/hanh-dong/pexels-20521157/index.m3u8"
+        },
+        {
+          "id": "hanh-dong/pexels-20521216",
+          "title": "Pexels 20521216",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/hanh-dong/pexels-20521216/index.m3u8"
+        },
+        {
+          "id": "hanh-dong/pexels-20521347",
+          "title": "Pexels 20521347",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/hanh-dong/pexels-20521347/index.m3u8"
+        },
+        {
+          "id": "hanh-dong/pexels-20522044",
+          "title": "Pexels 20522044",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/hanh-dong/pexels-20522044/index.m3u8"
+        },
+        {
+          "id": "hanh-dong/pexels-20522125",
+          "title": "Pexels 20522125",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/hanh-dong/pexels-20522125/index.m3u8"
+        },
+        {
+          "id": "hanh-dong/pexels-32067896",
+          "title": "Pexels 32067896",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/hanh-dong/pexels-32067896/index.m3u8"
+        },
+        {
+          "id": "hanh-dong/pexels-5445897",
+          "title": "Pexels 5445897",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/hanh-dong/pexels-5445897/index.m3u8"
+        },
+        {
+          "id": "hanh-dong/pexels-5446379",
+          "title": "Pexels 5446379",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/hanh-dong/pexels-5446379/index.m3u8"
+        },
+        {
+          "id": "hanh-dong/pexels-7934473",
+          "title": "Pexels 7934473",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/hanh-dong/pexels-7934473/index.m3u8"
+        },
+        {
+          "id": "hanh-dong/pexels-7935585",
+          "title": "Pexels 7935585",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/hanh-dong/pexels-7935585/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "phong-canh",
+      "name": "Landscape",
+      "videos": [
+        {
+          "id": "phong-canh/pexels-19906163",
+          "title": "Pexels 19906163",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/phong-canh/pexels-19906163/index.m3u8"
+        },
+        {
+          "id": "phong-canh/pexels-26524715",
+          "title": "Pexels 26524715",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/phong-canh/pexels-26524715/index.m3u8"
+        },
+        {
+          "id": "phong-canh/pexels-27946633",
+          "title": "Pexels 27946633",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/phong-canh/pexels-27946633/index.m3u8"
+        },
+        {
+          "id": "phong-canh/pexels-28927581",
+          "title": "Pexels 28927581",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/phong-canh/pexels-28927581/index.m3u8"
+        },
+        {
+          "id": "phong-canh/pexels-30400239",
+          "title": "Pexels 30400239",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/phong-canh/pexels-30400239/index.m3u8"
+        },
+        {
+          "id": "phong-canh/pexels-32200251",
+          "title": "Pexels 32200251",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/phong-canh/pexels-32200251/index.m3u8"
+        },
+        {
+          "id": "phong-canh/pexels-34355715",
+          "title": "Pexels 34355715",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/phong-canh/pexels-34355715/index.m3u8"
+        },
+        {
+          "id": "phong-canh/pexels-34700249",
+          "title": "Pexels 34700249",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/phong-canh/pexels-34700249/index.m3u8"
+        },
+        {
+          "id": "phong-canh/pexels-35070918",
+          "title": "Pexels 35070918",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/phong-canh/pexels-35070918/index.m3u8"
+        },
+        {
+          "id": "phong-canh/pexels-6316945",
+          "title": "Pexels 6316945",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/phong-canh/pexels-6316945/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "thanh-pho",
+      "name": "City",
+      "videos": [
+        {
+          "id": "thanh-pho/pexels-10552691",
+          "title": "Pexels 10552691",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/thanh-pho/pexels-10552691/index.m3u8"
+        },
+        {
+          "id": "thanh-pho/pexels-11933153",
+          "title": "Pexels 11933153",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/thanh-pho/pexels-11933153/index.m3u8"
+        },
+        {
+          "id": "thanh-pho/pexels-13271341",
+          "title": "Pexels 13271341",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/thanh-pho/pexels-13271341/index.m3u8"
+        },
+        {
+          "id": "thanh-pho/pexels-13687405",
+          "title": "Pexels 13687405",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/thanh-pho/pexels-13687405/index.m3u8"
+        },
+        {
+          "id": "thanh-pho/pexels-14428783",
+          "title": "Pexels 14428783",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/thanh-pho/pexels-14428783/index.m3u8"
+        },
+        {
+          "id": "thanh-pho/pexels-30330899",
+          "title": "Pexels 30330899",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/thanh-pho/pexels-30330899/index.m3u8"
+        },
+        {
+          "id": "thanh-pho/pexels-30508832",
+          "title": "Pexels 30508832",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/thanh-pho/pexels-30508832/index.m3u8"
+        },
+        {
+          "id": "thanh-pho/pexels-32238063",
+          "title": "Pexels 32238063",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/thanh-pho/pexels-32238063/index.m3u8"
+        },
+        {
+          "id": "thanh-pho/pexels-32457237",
+          "title": "Pexels 32457237",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/thanh-pho/pexels-32457237/index.m3u8"
+        },
+        {
+          "id": "thanh-pho/pexels-37779530",
+          "title": "Pexels 37779530",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/thanh-pho/pexels-37779530/index.m3u8"
+        }
+      ]
+    },
+    {
+      "slug": "thien-nhien",
+      "name": "Nature",
+      "videos": [
+        {
+          "id": "thien-nhien/pexels-32990645",
+          "title": "Pexels 32990645",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/thien-nhien/pexels-32990645/index.m3u8"
+        },
+        {
+          "id": "thien-nhien/pexels-34301184",
+          "title": "Pexels 34301184",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/thien-nhien/pexels-34301184/index.m3u8"
+        },
+        {
+          "id": "thien-nhien/pexels-34416530",
+          "title": "Pexels 34416530",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/thien-nhien/pexels-34416530/index.m3u8"
+        },
+        {
+          "id": "thien-nhien/pexels-34921924",
+          "title": "Pexels 34921924",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/thien-nhien/pexels-34921924/index.m3u8"
+        },
+        {
+          "id": "thien-nhien/pexels-36107556",
+          "title": "Pexels 36107556",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/thien-nhien/pexels-36107556/index.m3u8"
+        },
+        {
+          "id": "thien-nhien/pexels-36168695",
+          "title": "Pexels 36168695",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/thien-nhien/pexels-36168695/index.m3u8"
+        },
+        {
+          "id": "thien-nhien/pexels-36901708",
+          "title": "Pexels 36901708",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/thien-nhien/pexels-36901708/index.m3u8"
+        },
+        {
+          "id": "thien-nhien/pexels-36984461",
+          "title": "Pexels 36984461",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/thien-nhien/pexels-36984461/index.m3u8"
+        },
+        {
+          "id": "thien-nhien/pexels-37426048",
+          "title": "Pexels 37426048",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/thien-nhien/pexels-37426048/index.m3u8"
+        },
+        {
+          "id": "thien-nhien/pexels-5873182",
+          "title": "Pexels 5873182",
+          "url": "https://YOUR-PROJECT.pages.dev/feed/thien-nhien/pexels-5873182/index.m3u8"
+        }
+      ]
+    }
+  ]
+}

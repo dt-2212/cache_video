@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../core/widgets/video_feed.dart';
+import '../../../l10n/app_localizations.dart';
 import '../../main/controllers/main_controller.dart';
 import '../controllers/reel_controller.dart';
 
@@ -12,6 +13,7 @@ class ReelScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.find<ReelController>();
     final main = Get.find<MainController>();
+    final l10n = AppLocalizations.of(context)!;
 
     return Stack(
       children: [
@@ -21,12 +23,12 @@ class ReelScreen extends StatelessWidget {
             isActive: main.isReelActive,
           ),
         ),
-        const SafeArea(
+        SafeArea(
           child: Padding(
-            padding: EdgeInsets.only(top: 10, left: 16),
+            padding: const EdgeInsets.only(top: 10, left: 16),
             child: Text(
-              'Reels',
-              style: TextStyle(
+              l10n.reels,
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.bold,

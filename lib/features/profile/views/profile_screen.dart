@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../core/controllers/app_data_controller.dart';
-import '../../../core/models/app_user.dart';
 import '../../../core/routes/app_routes.dart';
 import '../../../core/services/auth_service.dart';
+import '../../../core/theme/app_colors.dart';
+import '../../../l10n/app_localizations.dart';
 import '../controllers/profile_controller.dart';
+import '../widgets/activity_overview.dart';
+import '../widgets/language_bottom_sheet.dart';
+import '../widgets/profile_header.dart';
+import '../widgets/profile_tile.dart';
 
-/// Profile = user header, premium banner and a settings list (drama-app style).
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
@@ -15,186 +20,140 @@ class ProfileScreen extends StatelessWidget {
     final controller = Get.find<ProfileController>();
     final data = Get.find<AppDataController>();
     final auth = AuthService.to;
+    final l10n = AppLocalizations.of(context)!;
+    final currentLangTag = Localizations.localeOf(context).languageCode == 'vi'
+        ? 'Tiếng Việt'
+        : 'English';
 
     return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: const Text('Profile'),
-        centerTitle: false,
-        actions: [
-          IconButton(icon: const Icon(Icons.settings), onPressed: () {}),
-        ],
-      ),
-      body: ListView(
-        children: [
-          const SizedBox(height: 16),
-          Obx(() {
-            data.liked.length;
-            data.history.length;
-            return _header(
-              auth.user.value,
-              controller.favoriteCount,
-              controller.watchedCount,
-            );
-          }),
-          const SizedBox(height: 16),
-          _premiumBanner(),
-          const SizedBox(height: 8),
-          _section('Account', const [
-            _Tile(Icons.person_outline, 'Edit profile'),
-            _Tile(Icons.workspace_premium_outlined, 'My subscription'),
-            _Tile(Icons.account_balance_wallet_outlined, 'Coins & rewards'),
-          ]),
-          _section('Preferences', const [
-            _Tile(Icons.language, 'Language'),
-            _Tile(Icons.notifications_none, 'Notifications'),
-            _Tile(Icons.download_outlined, 'Downloads'),
-          ]),
-          _section('Support', const [
-            _Tile(Icons.help_outline, 'Help center'),
-            _Tile(Icons.info_outline, 'About'),
-          ]),
-          Obx(() => auth.isLoggedIn
-              ? _Tile(Icons.logout, 'Đăng xuất', onTap: () async {
-                  await auth.signOut();
-                  Get.offAllNamed<void>(Routes.login);
-                })
-              : _Tile(Icons.login, 'Đăng nhập',
-                  onTap: () => Get.toNamed<void>(Routes.login))),
-          const SizedBox(height: 24),
-        ],
-      ),
-    );
-  }
-
-  Widget _header(AppUser? user, int favorites, int watched) {
-    final photoUrl = user?.photoUrl;
-    return Column(
-      children: [
-        CircleAvatar(
-          radius: 44,
-          backgroundColor: Colors.white24,
-          backgroundImage:
-              photoUrl != null ? NetworkImage(photoUrl) : null,
-          child: photoUrl == null
-              ? const Icon(Icons.person, size: 52, color: Colors.white)
-              : null,
-        ),
-        const SizedBox(height: 12),
-        Text(
-          user?.displayName ?? 'Khách',
-          style: const TextStyle(
-              color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
-        ),
-        const SizedBox(height: 4),
-        Text(
-          user?.email ?? 'Đang xem với tư cách khách',
-          style: const TextStyle(color: Colors.white54, fontSize: 12),
-        ),
-        const SizedBox(height: 16),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+      backgroundColor: AppColors.background,
+      body: SafeArea(
+        child: ListView(
+          physics: const BouncingScrollPhysics(),
           children: [
-            _stat('128', 'Following'),
-            _stat('12.4K', 'Followers'),
-            _stat('$favorites', 'Favorites'),
-            _stat('$watched', 'Watched'),
+            SizedBox(height: 16.h),
+            Obx(() => ProfileHeader(user: auth.user.value, l10n: l10n)),
+            SizedBox(height: 24.h),
+            Obx(() {
+              data.liked.length;
+              data.history.length;
+              return ActivityOverview(
+                favoriteCount: controller.favoriteCount,
+                watchedCount: controller.watchedCount,
+                l10n: l10n,
+              );
+            }),
+            SizedBox(height: 20.h),
+            _sectionHeader(l10n.preferences),
+            _cardContainer([
+              ProfileTile(
+                icon: Icons.language_rounded,
+                iconColor: AppColors.blue,
+                title: l10n.language,
+                value: currentLangTag,
+                onTap: () => LanguageBottomSheet.show(context, controller, l10n),
+              ),
+            ]),
+            SizedBox(height: 16.h),
+            _sectionHeader(l10n.support),
+            _cardContainer([
+              const ProfileTile(
+                icon: Icons.info_outline_rounded,
+                iconColor: AppColors.purple,
+                title: 'About',
+                value: 'v1.0.0',
+              ),
+            ]),
+            SizedBox(height: 24.h),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              child: Obx(
+                () => auth.isLoggedIn
+                    ? _actionButton(
+                        icon: Icons.logout_rounded,
+                        label: l10n.signOut,
+                        color: AppColors.destructive,
+                        onTap: () async {
+                          await auth.signOut();
+                          Get.offAllNamed<void>(Routes.login);
+                        },
+                      )
+                    : _actionButton(
+                        icon: Icons.login_rounded,
+                        label: l10n.signIn,
+                        color: AppColors.primary,
+                        onTap: () => Get.toNamed<void>(Routes.login),
+                      ),
+              ),
+            ),
+            SizedBox(height: 76.h),
           ],
         ),
-      ],
-    );
-  }
-
-  Widget _stat(String value, String label) {
-    return Expanded(
-      child: Column(
-        children: [
-          Text(value,
-              style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold)),
-          const SizedBox(height: 2),
-          Text(label,
-              style: const TextStyle(color: Colors.white54, fontSize: 12)),
-        ],
       ),
     );
   }
 
-  Widget _premiumBanner() {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16),
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(14),
-        gradient: const LinearGradient(
-          colors: [Color(0xFFFFB75E), Color(0xFFED8F03)],
+  Widget _sectionHeader(String title) {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 8.h),
+      child: Text(
+        title,
+        style: TextStyle(
+          color: Colors.white54,
+          fontSize: 13.sp,
+          fontWeight: FontWeight.w600,
+          letterSpacing: 0,
         ),
       ),
-      child: Row(
-        children: [
-          const Icon(Icons.workspace_premium, color: Colors.white, size: 32),
-          const SizedBox(width: 12),
-          const Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Go Premium',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold)),
-                SizedBox(height: 2),
-                Text('Unlimited reels · No ads',
-                    style: TextStyle(color: Colors.white, fontSize: 12)),
-              ],
-            ),
-          ),
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.black,
-              foregroundColor: Colors.white,
-              shape:
-                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-            ),
-            child: const Text('Upgrade'),
-          ),
-        ],
+    );
+  }
+
+  Widget _cardContainer(List<Widget> children) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
+      child: Container(
+        decoration: BoxDecoration(
+          color: AppColors.surface,
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
+        ),
+        child: Column(children: children),
       ),
     );
   }
 
-  Widget _section(String title, List<_Tile> tiles) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16, 20, 16, 8),
-          child: Text(title,
-              style: const TextStyle(color: Colors.white54, fontSize: 13)),
+  Widget _actionButton({
+    required IconData icon,
+    required String label,
+    required Color color,
+    required VoidCallback onTap,
+  }) {
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(16.r),
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 14.h),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.12),
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(color: color.withValues(alpha: 0.2)),
         ),
-        ...tiles,
-      ],
-    );
-  }
-}
-
-class _Tile extends StatelessWidget {
-  final IconData icon;
-  final String label;
-  final VoidCallback? onTap;
-  const _Tile(this.icon, this.label, {this.onTap});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      leading: Icon(icon, color: Colors.white),
-      title: Text(label, style: const TextStyle(color: Colors.white)),
-      trailing: const Icon(Icons.chevron_right, color: Colors.white38),
-      onTap: onTap ?? () {},
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon, color: color, size: 20.r),
+            SizedBox(width: 8.w),
+            Text(
+              label,
+              style: TextStyle(
+                color: color,
+                fontSize: 15.sp,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

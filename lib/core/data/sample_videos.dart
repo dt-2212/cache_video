@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import '../models/video.dart';
+import '../theme/app_colors.dart';
 
 /// Sample HLS streams reused from the original core, enriched with metadata.
 const List<Video> kSampleVideos = [
@@ -15,7 +15,7 @@ const List<Video> kSampleVideos = [
     comments: 12500,
     shares: 8900,
     views: 5400000,
-    thumbColor: Color(0xFF8E2DE2),
+    thumbColor: AppColors.accent,
   ),
   Video(
     id: 'v2',
@@ -30,7 +30,7 @@ const List<Video> kSampleVideos = [
     comments: 9300,
     shares: 4200,
     views: 3100000,
-    thumbColor: Color(0xFF00B4DB),
+    thumbColor: AppColors.cyan,
   ),
   Video(
     id: 'v3',
@@ -45,7 +45,7 @@ const List<Video> kSampleVideos = [
     comments: 7100,
     shares: 3100,
     views: 1800000,
-    thumbColor: Color(0xFFFF512F),
+    thumbColor: AppColors.coral,
   ),
   Video(
     id: 'v4',
@@ -60,6 +60,6 @@ const List<Video> kSampleVideos = [
     comments: 41000,
     shares: 19000,
     views: 9200000,
-    thumbColor: Color(0xFF11998E),
+    thumbColor: AppColors.mint,
   ),
 ];

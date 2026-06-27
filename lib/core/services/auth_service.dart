@@ -64,7 +64,7 @@ class AuthService extends GetxService {
         if (u != null) _setGuest(false);
       });
     } catch (e) {
-      debugPrint('⚠️ Firebase chưa cấu hình → chạy chế độ khách. ($e)');
+      debugPrint('⚠️ Firebase not configured -> running in guest mode. ($e)');
       firebaseReady.value = false;
     }
     return this;
@@ -75,8 +75,8 @@ class AuthService extends GetxService {
   Future<bool> signInWithGoogle() async {
     if (!firebaseReady.value) {
       Get.snackbar(
-        'Chưa cấu hình',
-        'Firebase chưa được thiết lập. Xem SETUP_FIREBASE.md.',
+        'Not Configured',
+        'Firebase is not set up yet. See SETUP_FIREBASE.md.',
         snackPosition: SnackPosition.BOTTOM,
       );
       return false;
@@ -96,7 +96,7 @@ class AuthService extends GetxService {
       return true;
     } catch (e) {
       Get.snackbar(
-        'Đăng nhập thất bại',
+        'Sign in Failed',
         '$e',
         snackPosition: SnackPosition.BOTTOM,
       );

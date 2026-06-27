@@ -1,18 +1,18 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-/// The signed-in user, decoupled from Firebase so the UI only depends on this.
-class AppUser {
-  final String uid;
-  final String? name;
-  final String? email;
-  final String? photoUrl;
+part 'app_user.freezed.dart';
 
-  const AppUser({
-    required this.uid,
-    this.name,
-    this.email,
-    this.photoUrl,
-  });
+@freezed
+abstract class AppUser with _$AppUser {
+  const factory AppUser({
+    required String uid,
+    String? name,
+    String? email,
+    String? photoUrl,
+  }) = _AppUser;
+
+  const AppUser._();
 
   /// Build from a Firebase [User] (Google sign-in fills name/email/photo).
   factory AppUser.fromFirebase(User u) => AppUser(

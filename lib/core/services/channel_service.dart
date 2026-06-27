@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 import '../models/video.dart';
+import '../theme/app_colors.dart';
 import 'channel_source.dart';
 import 'm3u_parser.dart';
 
@@ -37,12 +38,12 @@ abstract class ChannelService {
 
   /// Accent palette reused for placeholder gradients behind channel logos.
   static const List<Color> _palette = [
-    Color(0xFF8E2DE2),
-    Color(0xFF00B4DB),
-    Color(0xFFFF512F),
-    Color(0xFF11998E),
-    Color(0xFFFC466B),
-    Color(0xFF2193B0),
+    AppColors.accent,
+    AppColors.cyan,
+    AppColors.coral,
+    AppColors.mint,
+    AppColors.pink,
+    AppColors.skyBlue,
   ];
 
   /// Fetch all sources (fast, unvalidated). Validation runs separately via

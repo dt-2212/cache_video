@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import '../../../core/theme/app_colors.dart';
+import '../../../l10n/app_localizations.dart';
 
-/// Branded splash shown while the app boots, before routing to the main shell.
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: AppColors.background,
       body: Center(
         child: TweenAnimationBuilder<double>(
           tween: Tween(begin: 0, end: 1),
@@ -28,11 +31,11 @@ class SplashScreen extends StatelessWidget {
                   gradient: const LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
-                    colors: [Color(0xFF8E2DE2), Color(0xFFFF512F)],
+                    colors: [AppColors.accent, AppColors.coral],
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: const Color(0xFF8E2DE2).withValues(alpha: 0.5),
+                      color: AppColors.accent.withValues(alpha: 0.5),
                       blurRadius: 24,
                       spreadRadius: 2,
                     ),
@@ -42,19 +45,14 @@ class SplashScreen extends StatelessWidget {
                     color: Colors.white, size: 56),
               ),
               const SizedBox(height: 20),
-              const Text(
-                'ShortDrama',
-                style: TextStyle(
+              Text(
+                l10n.appTitle,
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 26,
                   fontWeight: FontWeight.bold,
-                  letterSpacing: 0.5,
+                  letterSpacing: 0,
                 ),
-              ),
-              const SizedBox(height: 8),
-              const Text(
-                'Endless short videos',
-                style: TextStyle(color: Colors.white54, fontSize: 14),
               ),
               const SizedBox(height: 36),
               const SizedBox(
